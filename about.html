@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About | Precision Sequence</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { forest: '#1B5E20', cream: '#F8FAF8' },
+          fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-cream text-gray-900 font-sans antialiased">
+  <header class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-lg border-b border-gray-200">
+    <div class="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-3">
+        <img src="logo.jpg" alt="Precision Sequence" class="h-10 w-auto">
+      </a>
+      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-700">
+        <a href="index.html" class="hover:text-forest transition">Home</a>
+        <a href="shop.html" class="hover:text-forest transition">Shop</a>
+        <a href="quality.html" class="hover:text-forest transition">Quality & CoA</a>
+        <a href="about.html" class="text-forest font-semibold">About</a>
+        <a href="contact.html" class="hover:text-forest transition">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="pt-28 pb-20 px-6">
+    <div class="max-w-3xl mx-auto">
+      <h1 class="text-4xl font-bold mb-6 text-gray-900">About Precision Sequence</h1>
+      
+      <div class="space-y-6 text-gray-600 text-sm leading-relaxed">
+        <p>
+          Precision Sequence supplies research-grade peptides for laboratory investigation. We exist because too many suppliers in this space operate with minimal transparency around purity, identity, and sourcing.
+        </p>
+        <p>
+          Our approach is straightforward: source from established manufacturers that meet rigorous quality standards, verify every batch independently, and make the data available. The amino acid sequence is the product. The certificate of analysis is the proof.
+        </p>
+        <p>
+          We do not make medical claims. We do not sell for human or animal consumption. All products are labeled and sold for research use only. Researchers are responsible for compliance with all applicable laws and regulations in their jurisdiction.
+        </p>
+        <p>
+          If a batch does not meet our purity and identity specifications, it is not sold. That standard is non-negotiable.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-3 gap-4 mt-12 text-center">
+        <div class="bg-white border border-gray-200 rounded-xl p-4 shadow-sm">
+          <p class="text-2xl font-bold text-forest">≥99%</p>
+          <p class="text-xs text-gray-500 mt-1">Purity Spec</p>
+        </div>
+        <div class="bg-white border border-gray-200 rounded-xl p-4 shadow-sm">
+          <p class="text-2xl font-bold text-forest">CoA</p>
+          <p class="text-xs text-gray-500 mt-1">Per Batch</p>
+        </div>
+        <div class="bg-white border border-gray-200 rounded-xl p-4 shadow-sm">
+          <p class="text-2xl font-bold text-forest">US</p>
+          <p class="text-xs text-gray-500 mt-1">Shipping</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="border-t border-gray-200 py-8 px-6 text-center text-xs text-gray-500 bg-white">
+    © 2026 Precision Sequence • Research Use Only
+  </footer>
+</body>
+</html>
