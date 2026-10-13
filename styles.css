@@ -1,0 +1,38 @@
+/* Precision Sequence - Custom Styles */
+
+body {
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+}
+
+.product-card {
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(27, 94, 32, 0.4);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+.badge {
+  font-size: 10px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar for cart */
+#cartSidebar::-webkit-scrollbar {
+  width: 6px;
+}
+#cartSidebar::-webkit-scrollbar-track {
+  background: transparent;
+}
+#cartSidebar::-webkit-scrollbar-thumb {
+  background: rgba(0,0,0,0.1);
+  border-radius: 3px;
+}
