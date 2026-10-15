@@ -77,7 +77,7 @@ function renderProducts(containerId = 'productGrid', limit = 8) {
   const productsToShow = limit ? PRODUCTS.slice(0, limit) : PRODUCTS;
   container.innerHTML = productsToShow.map(p => `
     <div class="product-card bg-white border border-gray-200 rounded-xl overflow-hidden flex flex-col shadow-sm hover:shadow-md">
-      <div class="bg-gray-50 flex items-center justify-center p-4 h-48">
+      <div class="bg-gray-50 flex items-center justify-center p-2 h-64">
         <img src="${VIAL_IMG}" alt="${p.name}" class="h-full object-contain">
       </div>
       <div class="p-4 flex flex-col flex-1">
