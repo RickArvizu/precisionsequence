@@ -77,14 +77,20 @@ function renderProducts(containerId = 'productGrid', limit = 8) {
   const productsToShow = limit ? PRODUCTS.slice(0, limit) : PRODUCTS;
   container.innerHTML = productsToShow.map(p => `
     <div class="product-card bg-white border border-gray-200 rounded-xl overflow-hidden flex flex-col shadow-sm hover:shadow-md">
-      <div class="bg-gray-50 flex items-center justify-center p-3 h-64 relative">
-        <div class="w-32 h-48 bg-white border-2 border-gray-300 rounded-lg flex flex-col items-center justify-center shadow-inner">
-          <img src="${LOGO_IMG}" alt="Precision Sequence" class="w-24 h-auto object-contain mb-2">
-          <p class="text-[10px] text-forest font-semibold">Research Grade</p>
-          <p class="text-[9px] text-gray-500">${p.size}</p>
+      <div class="bg-white flex items-center justify-center p-4 h-72">
+        <div class="relative w-36 h-56 flex flex-col items-center">
+          <div class="w-16 h-6 bg-gray-300 rounded-t-sm"></div>
+          <div class="w-20 h-4 bg-gray-200"></div>
+          <div class="w-28 h-40 bg-gradient-to-b from-white to-gray-100 border-2 border-gray-300 rounded-b-xl rounded-t-sm flex flex-col items-center justify-center relative">
+            <div class="absolute inset-2 bg-white border border-gray-200 rounded flex flex-col items-center justify-center p-1">
+              <img src="${LOGO_IMG}" alt="Precision Sequence" class="w-full h-auto object-contain">
+              <p class="text-[8px] text-forest font-bold mt-1">Research Grade</p>
+              <p class="text-[8px] text-gray-600">${p.size}</p>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="p-4 flex flex-col flex-1">
+      <div class="p-4 flex flex-col flex-1 border-t border-gray-100">
         <span class="text-[10px] font-semibold uppercase tracking-wide text-forest mb-1">${p.category}</span>
         <h3 class="font-semibold text-base mb-1 text-gray-900">${p.name}</h3>
         <p class="text-xs text-gray-500 mb-2">${p.size} • ${p.purity}</p>
