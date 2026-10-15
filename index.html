@@ -4,20 +4,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Precision Sequence | Research Grade Peptides | 99% Purity</title>
-  <meta name="description" content="Next-generation research peptides. ≥99% HPLC verified, third-party tested. For laboratory research use only.">
+  <meta name="description" content="Next-generation research peptides. ≥99% HPLC verified. For laboratory research use only.">
   <link rel="icon" type="image/jpeg" href="precisionsequence logo.jpg">
-  <link rel="apple-touch-icon" href="precisionsequence logo.jpg">
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="styles.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <script>
     tailwind.config = {
       theme: {
         extend: {
           colors: {
-            forest: '#1B5E20',
-            'forest-dark': '#145218',
-            cream: '#FAFBFA',
+            navy: '#003366',
+            'navy-dark': '#002244',
+            accent: '#0055AA',
+            lightblue: '#E8F4FC',
           },
           fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] }
         }
@@ -25,196 +24,126 @@
     }
   </script>
 </head>
-<body class="bg-white text-gray-900 font-sans antialiased">
+<body class="bg-white text-gray-800 font-sans">
 
   <!-- Age Gate -->
-  <div id="ageGate" class="fixed inset-0 bg-white/95 backdrop-blur-md z-[100] flex items-center justify-center p-4">
-    <div class="bg-white border border-gray-200 rounded-2xl p-8 max-w-md text-center shadow-xl">
-      <h2 class="text-2xl font-bold mb-3">Age Verification</h2>
-      <p class="text-gray-600 mb-6 text-sm leading-relaxed">
-        This site contains products intended solely for laboratory research. You must be 21 or older to enter.
-      </p>
-      <button onclick="enterSite()" class="w-full bg-forest hover:bg-forest-dark text-white font-semibold py-3 rounded-lg transition">
-        I AM 21 OR OLDER
-      </button>
+  <div id="ageGate" class="fixed inset-0 bg-white/90 z-[100] flex items-center justify-center p-4">
+    <div class="bg-white border border-gray-200 rounded-lg p-8 max-w-md text-center shadow-lg">
+      <h2 class="text-xl font-bold mb-3 text-navy">Age Verification Required</h2>
+      <p class="text-gray-600 mb-6 text-sm">This site contains products intended solely for laboratory research. You must be 21 or older.</p>
+      <button onclick="enterSite()" class="w-full bg-accent hover:bg-navy text-white font-semibold py-3 rounded transition">I AM 21 OR OLDER</button>
       <p class="text-xs text-gray-400 mt-4">Research use only. Not for human consumption.</p>
     </div>
   </div>
 
   <!-- Header -->
-  <header class="sticky top-0 z-50 bg-white border-b border-gray-100">
-    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-      <a href="index.html" class="flex items-center">
-        <img src="precisionsequence logo.jpg" alt="Precision Sequence" class="h-14 w-auto">
+  <header class="bg-navy text-white">
+    <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-2">
+        <img src="precisionsequence logo.jpg" alt="Precision Sequence" class="h-10 w-auto bg-white rounded px-1">
+        <span class="font-bold text-lg hidden sm:inline">Precision Sequence</span>
       </a>
-      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-700">
-        <a href="shop.html" class="hover:text-forest">Shop Peptides</a>
-        <a href="quality.html" class="hover:text-forest">Quality</a>
-        <a href="about.html" class="hover:text-forest">About</a>
-        <a href="contact.html" class="hover:text-forest">Contact</a>
+      <nav class="hidden md:flex items-center gap-6 text-sm">
+        <a href="shop.html" class="hover:text-lightblue">Shop Peptides</a>
+        <a href="quality.html" class="hover:text-lightblue">Quality</a>
+        <a href="about.html" class="hover:text-lightblue">About</a>
+        <a href="contact.html" class="hover:text-lightblue">Contact</a>
       </nav>
-      <button onclick="toggleCart()" class="relative p-2 hover:bg-gray-50 rounded-lg">
+      <button onclick="toggleCart()" class="relative p-2 hover:bg-white/10 rounded">
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
-        <span id="cartCount" class="absolute -top-1 -right-1 bg-forest text-white text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center">0</span>
+        <span id="cartCount" class="absolute -top-1 -right-1 bg-accent text-white text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center">0</span>
       </button>
     </div>
   </header>
 
   <!-- Hero -->
-  <section class="py-16 md:py-24 px-6 bg-gradient-to-b from-cream to-white">
+  <section class="py-20 px-6 bg-lightblue">
     <div class="max-w-4xl mx-auto text-center">
-      <p class="text-forest text-sm font-semibold tracking-wide uppercase mb-4">Research Grade • 99% Purity</p>
-      <h1 class="text-4xl md:text-6xl font-bold tracking-tight mb-6 text-gray-900">
-        Next-Generation Peptides<br class="hidden md:block"> for Advanced Research
-      </h1>
-      <p class="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
-        High-purity peptides trusted by researchers worldwide. Every batch is HPLC-verified ≥99% and independently tested for consistency and quality.
-      </p>
-      <div class="flex flex-wrap justify-center gap-4">
-        <a href="shop.html" class="bg-forest hover:bg-forest-dark text-white font-semibold px-8 py-4 rounded-lg transition">
-          Shop Peptides
-        </a>
-        <a href="quality.html" class="border border-gray-300 hover:border-forest text-gray-800 px-8 py-4 rounded-lg transition">
-          View Quality Standards
-        </a>
-      </div>
+      <h1 class="text-4xl md:text-5xl font-bold text-navy-dark mb-4">Next-Generation Peptides for Advanced Research</h1>
+      <p class="text-lg text-gray-700 mb-2">High-Purity Peptides Trusted by Researchers Worldwide</p>
+      <p class="text-gray-600 mb-8 max-w-2xl mx-auto">Precision-formulated research peptides with ≥99% HPLC purity. Independently tested and verified for laboratory use.</p>
+      <a href="shop.html" class="inline-block bg-accent hover:bg-navy text-white font-semibold px-8 py-4 rounded transition">Shop Peptides</a>
     </div>
   </section>
 
   <!-- Trust Badges -->
-  <section class="border-y border-gray-100 py-6 bg-white">
-    <div class="max-w-6xl mx-auto px-6 grid grid-cols-2 md:grid-cols-5 gap-6 text-center text-sm">
-      <div><span class="font-semibold text-forest">99% Purity</span><p class="text-xs text-gray-500 mt-1">HPLC Verified</p></div>
-      <div><span class="font-semibold text-forest">Lab Tested</span><p class="text-xs text-gray-500 mt-1">Third-Party CoA</p></div>
-      <div><span class="font-semibold text-forest">Free Shipping</span><p class="text-xs text-gray-500 mt-1">Orders $200+</p></div>
-      <div><span class="font-semibold text-forest">Secure Payment</span><p class="text-xs text-gray-500 mt-1">SSL Encrypted</p></div>
-      <div class="col-span-2 md:col-span-1"><span class="font-semibold text-forest">24/7 Support</span><p class="text-xs text-gray-500 mt-1">Expert Help</p></div>
+  <section class="py-8 px-6 border-b border-gray-200">
+    <div class="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-5 gap-4 text-center text-sm">
+      <div class="text-accent font-semibold">99% Purity<br><span class="text-gray-500 text-xs font-normal">HPLC Verified</span></div>
+      <div class="text-accent font-semibold">Lab Tested<br><span class="text-gray-500 text-xs font-normal">Third-Party CoA</span></div>
+      <div class="text-accent font-semibold">Free Shipping<br><span class="text-gray-500 text-xs font-normal">Orders $200+</span></div>
+      <div class="text-accent font-semibold">Secure Payment<br><span class="text-gray-500 text-xs font-normal">SSL Encrypted</span></div>
+      <div class="col-span-2 md:col-span-1 text-accent font-semibold">24/7 Support<br><span class="text-gray-500 text-xs font-normal">Expert Help</span></div>
     </div>
   </section>
 
   <!-- Featured Products -->
-  <section class="py-16 px-6">
+  <section class="py-12 px-6">
     <div class="max-w-7xl mx-auto">
-      <div class="flex items-end justify-between mb-8">
-        <div>
-          <h2 class="text-2xl md:text-3xl font-bold">Featured Products</h2>
-          <p class="text-gray-500 text-sm mt-1">Precision-formulated peptides for laboratory research</p>
-        </div>
-        <a href="shop.html" class="text-forest text-sm font-medium hover:underline">View All</a>
+      <div class="flex items-center justify-between mb-6">
+        <h2 class="text-2xl font-bold text-navy">Featured Products</h2>
+        <a href="shop.html" class="text-accent text-sm hover:underline">View All</a>
       </div>
-      <div id="productGrid" class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6"></div>
+      <div id="productGrid" class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5"></div>
     </div>
   </section>
 
   <!-- Why Choose -->
-  <section class="py-16 px-6 bg-cream">
+  <section class="py-12 px-6 bg-gray-50">
     <div class="max-w-7xl mx-auto">
-      <h2 class="text-2xl md:text-3xl font-bold text-center mb-10">Why Choose Precision Sequence</h2>
+      <h2 class="text-2xl font-bold text-navy text-center mb-8">Why Choose Precision Sequence</h2>
       <div class="grid md:grid-cols-3 gap-6">
-        <div class="bg-white rounded-xl p-6 border border-gray-100">
-          <h3 class="font-semibold mb-2">Independent Testing</h3>
+        <div class="bg-white border border-gray-200 rounded p-5">
+          <h3 class="font-semibold text-navy mb-2">Independent Testing</h3>
           <p class="text-sm text-gray-600">Every batch is third-party tested. HPLC purity and identity confirmation with CoA available.</p>
         </div>
-        <div class="bg-white rounded-xl p-6 border border-gray-100">
-          <h3 class="font-semibold mb-2">USA Synthesis & Handling</h3>
-          <p class="text-sm text-gray-600">Lyophilized peptides produced and stored under controlled conditions with cold-chain shipping.</p>
+        <div class="bg-white border border-gray-200 rounded p-5">
+          <h3 class="font-semibold text-navy mb-2">Quality Control</h3>
+          <p class="text-sm text-gray-600">Lyophilized peptides produced under controlled conditions with full batch documentation.</p>
         </div>
-        <div class="bg-white rounded-xl p-6 border border-gray-100">
-          <h3 class="font-semibold mb-2">Research Focused</h3>
-          <p class="text-sm text-gray-600">Sold strictly for laboratory research. No medical claims. Private, discreet ordering.</p>
+        <div class="bg-white border border-gray-200 rounded p-5">
+          <h3 class="font-semibold text-navy mb-2">Research Focused</h3>
+          <p class="text-sm text-gray-600">Sold strictly for laboratory research. Private ordering and discreet shipping.</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Newsletter -->
-  <section class="py-16 px-6">
-    <div class="max-w-xl mx-auto text-center">
-      <h2 class="text-2xl font-bold mb-2">Unlock 10% Off</h2>
-      <p class="text-gray-500 text-sm mb-6">Sign up for research updates and exclusive offers.</p>
-      <form class="flex gap-2 max-w-md mx-auto" onsubmit="event.preventDefault(); alert('Thank you! This is a demo form.');">
-        <input type="email" required placeholder="Email address" class="flex-1 border border-gray-300 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-forest">
-        <button type="submit" class="bg-forest text-white font-semibold px-6 py-3 rounded-lg text-sm">Send</button>
+  <section class="py-12 px-6">
+    <div class="max-w-md mx-auto text-center bg-gray-50 rounded-lg p-8">
+      <h2 class="text-xl font-bold text-navy mb-2">Unlock 10% Off</h2>
+      <p class="text-gray-500 text-sm mb-4">Sign up for research updates.</p>
+      <form class="flex gap-2" onsubmit="event.preventDefault(); alert('Thank you!');">
+        <input type="email" required placeholder="Email" class="flex-1 border border-gray-300 rounded px-3 py-2 text-sm">
+        <button type="submit" class="bg-accent text-white font-semibold px-4 py-2 rounded text-sm">Send</button>
       </form>
     </div>
   </section>
 
-  <!-- FAQ -->
-  <section class="py-16 px-6 bg-cream">
-    <div class="max-w-3xl mx-auto">
-      <h2 class="text-2xl font-bold mb-8 text-center">Frequently Asked Questions</h2>
-      <div class="space-y-4">
-        <details class="bg-white rounded-lg border border-gray-100 p-4">
-          <summary class="font-medium cursor-pointer">What purity can I expect?</summary>
-          <p class="text-sm text-gray-600 mt-2">All peptides are specified at ≥99% purity by HPLC. Third-party Certificates of Analysis are available per batch.</p>
-        </details>
-        <details class="bg-white rounded-lg border border-gray-100 p-4">
-          <summary class="font-medium cursor-pointer">Are these for human use?</summary>
-          <p class="text-sm text-gray-600 mt-2">No. All products are sold strictly for laboratory research and in-vitro scientific investigation only. Not for human or animal consumption.</p>
-        </details>
-        <details class="bg-white rounded-lg border border-gray-100 p-4">
-          <summary class="font-medium cursor-pointer">How should I store peptides?</summary>
-          <p class="text-sm text-gray-600 mt-2">Lyophilized peptides should be stored at -20°C, protected from light and moisture. Follow standard research laboratory practices.</p>
-        </details>
-      </div>
-    </div>
-  </section>
-
   <!-- Disclaimer -->
-  <section class="py-6 px-6 border-t border-gray-100">
-    <div class="max-w-4xl mx-auto text-center text-xs text-gray-500">
-      <strong>RESEARCH USE ONLY.</strong> Products are intended solely for laboratory research. Not for human or animal consumption. Not FDA-approved. Buyers must be 21+ and accept full responsibility for proper handling.
-    </div>
+  <section class="py-4 px-6 border-t border-gray-200 text-center text-xs text-gray-500">
+    <strong>RESEARCH USE ONLY.</strong> Not for human or animal consumption. Not FDA-approved. 21+
   </section>
 
   <!-- Footer -->
-  <footer class="border-t border-gray-100 py-10 px-6 bg-white">
-    <div class="max-w-7xl mx-auto grid md:grid-cols-4 gap-8 text-sm">
-      <div>
-        <img src="precisionsequence logo.jpg" alt="Precision Sequence" class="h-10 w-auto mb-3">
-        <p class="text-gray-500 text-xs">Research-grade peptides. Independently verified.</p>
-      </div>
-      <div>
-        <p class="font-medium mb-3">Shop</p>
-        <div class="flex flex-col gap-2 text-gray-600 text-sm">
-          <a href="shop.html" class="hover:text-forest">All Peptides</a>
-          <a href="shop.html" class="hover:text-forest">Blends</a>
-          <a href="quality.html" class="hover:text-forest">Certificates of Analysis</a>
-        </div>
-      </div>
-      <div>
-        <p class="font-medium mb-3">Company</p>
-        <div class="flex flex-col gap-2 text-gray-600 text-sm">
-          <a href="about.html" class="hover:text-forest">About</a>
-          <a href="contact.html" class="hover:text-forest">Contact</a>
-        </div>
-      </div>
-      <div>
-        <p class="font-medium mb-3">Support</p>
-        <p class="text-gray-500 text-xs">Research use only. 21+</p>
-      </div>
-    </div>
-    <div class="max-w-7xl mx-auto mt-8 pt-6 border-t border-gray-100 text-center text-xs text-gray-400">
-      © 2026 Precision Sequence. Research use only. Not for human consumption.
+  <footer class="bg-navy text-white py-8 px-6">
+    <div class="max-w-7xl mx-auto text-center text-sm">
+      <p class="mb-2">© 2026 Precision Sequence</p>
+      <p class="text-gray-300 text-xs">Research use only. Not for human consumption.</p>
     </div>
   </footer>
 
-  <!-- Cart Sidebar -->
-  <div id="cartSidebar" class="fixed top-0 right-0 h-full w-full max-w-md bg-white border-l border-gray-200 z-50 transform translate-x-full transition-transform duration-300 overflow-y-auto">
-    <div class="p-6">
-      <div class="flex items-center justify-between mb-6">
-        <h3 class="text-xl font-bold">Your Cart</h3>
-        <button onclick="toggleCart()" class="text-gray-500">✕</button>
-      </div>
-      <div id="cartItems" class="space-y-4 mb-6"></div>
-      <div class="border-t border-gray-200 pt-4">
-        <div class="flex justify-between mb-4"><span>Subtotal</span><span id="cartTotal" class="font-semibold">$0.00</span></div>
-        <button class="w-full bg-forest text-white font-semibold py-3 rounded-lg">Checkout (Demo)</button>
-        <p class="text-xs text-gray-500 text-center mt-3">Demonstration site only.</p>
-      </div>
+  <!-- Cart -->
+  <div id="cartSidebar" class="fixed top-0 right-0 h-full w-full max-w-sm bg-white border-l border-gray-200 z-50 transform translate-x-full transition-transform duration-300 overflow-y-auto">
+    <div class="p-5">
+      <div class="flex justify-between items-center mb-4"><h3 class="font-bold text-navy">Cart</h3><button onclick="toggleCart()">✕</button></div>
+      <div id="cartItems" class="mb-4"></div>
+      <div class="border-t pt-4"><div class="flex justify-between mb-3"><span>Subtotal</span><span id="cartTotal" class="font-semibold">$0.00</span></div>
+      <button class="w-full bg-accent text-white py-2 rounded text-sm">Checkout (Demo)</button></div>
     </div>
   </div>
-  <div id="cartOverlay" onclick="toggleCart()" class="fixed inset-0 bg-black/30 z-40 hidden"></div>
+  <div id="cartOverlay" onclick="toggleCart()" class="fixed inset-0 bg-black/40 z-40 hidden"></div>
 
   <script src="script.js"></script>
 </body>
