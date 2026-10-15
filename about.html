@@ -5,75 +5,50 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About | Precision Sequence</title>
   <link rel="icon" type="image/jpeg" href="precisionsequence logo.jpg">
-  <link rel="apple-touch-icon" href="precisionsequence logo.jpg">
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="styles.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: { forest: '#1B5E20', cream: '#F8FAF8' },
-          fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] }
-        }
-      }
-    }
+    tailwind.config = { theme: { extend: { colors: { forest: '#1B5E20', 'forest-dark': '#0D3B12', 'green-accent': '#4CAF50', 'bg-light': '#F1F8F4' }, fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] } } } }
   </script>
 </head>
-<body class="bg-cream text-gray-900 font-sans antialiased">
-  <header class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-lg border-b border-gray-200">
-    <div class="max-w-7xl mx-auto px-6 py-2 flex items-center justify-between">
-      <a href="index.html" class="flex items-center gap-3">
-        <img src="precisionsequence logo.jpg" alt="Precision Sequence" class="h-24 w-auto">
-      </a>
-      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-700">
-        <a href="index.html" class="hover:text-forest transition">Home</a>
-        <a href="shop.html" class="hover:text-forest transition">Shop</a>
-        <a href="quality.html" class="hover:text-forest transition">Quality & CoA</a>
-        <a href="about.html" class="text-forest font-semibold">About</a>
-        <a href="contact.html" class="hover:text-forest transition">Contact</a>
+<body class="bg-bg-light text-gray-900 font-sans">
+  <div id="ageGate" class="fixed inset-0 bg-white/95 z-[100] flex items-center justify-center p-4">
+    <div class="bg-white border border-gray-200 rounded-xl p-8 max-w-md text-center shadow-xl">
+      <div class="text-3xl mb-3">⚠️</div>
+      <h2 class="text-xl font-bold mb-3">Age Verification Required</h2>
+      <p class="text-gray-600 mb-6 text-sm">This site contains products intended solely for laboratory research. You must be 21 or older to enter.</p>
+      <button onclick="enterSite()" class="w-full bg-forest hover:bg-forest-dark text-white font-semibold py-3 rounded-lg">I AM 21 OR OLDER</button>
+      <button onclick="window.location.href='https://google.com'" class="w-full mt-2 border border-gray-300 py-3 rounded-lg text-gray-700">I AM UNDER 21</button>
+    </div>
+  </div>
+  <header class="bg-forest-dark text-white sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
+      <a href="index.html"><img src="precisionsequence logo.jpg" alt="Precision Sequence" class="h-10 w-auto bg-white rounded px-1"></a>
+      <nav class="hidden md:flex items-center gap-6 text-sm">
+        <a href="index.html" class="hover:text-green-accent">Home</a>
+        <a href="shop.html" class="hover:text-green-accent">Shop All Peptides</a>
+        <a href="quality.html" class="hover:text-green-accent">Quality</a>
+        <a href="about.html" class="text-green-accent">About</a>
+        <a href="contact.html" class="hover:text-green-accent">Contact</a>
       </nav>
+      <button onclick="toggleCart()" class="relative p-2 hover:bg-white/10 rounded">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+        <span id="cartCount" class="absolute -top-1 -right-1 bg-green-accent text-white text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center">0</span>
+      </button>
     </div>
   </header>
-
-  <main class="pt-40 pb-20 px-6">
+  <main class="py-12 px-4">
     <div class="max-w-3xl mx-auto">
-      <h1 class="text-4xl font-bold mb-6 text-gray-900">About Precision Sequence</h1>
-      
-      <div class="space-y-6 text-gray-600 text-sm leading-relaxed">
-        <p>
-          Precision Sequence supplies research-grade peptides for laboratory investigation. We exist because too many suppliers in this space operate with minimal transparency around purity, identity, and sourcing.
-        </p>
-        <p>
-          Our approach is straightforward: source from established manufacturers that meet rigorous quality standards, verify every batch independently, and make the data available. The amino acid sequence is the product. The certificate of analysis is the proof.
-        </p>
-        <p>
-          We do not make medical claims. We do not sell for human or animal consumption. All products are labeled and sold for research use only. Researchers are responsible for compliance with all applicable laws and regulations in their jurisdiction.
-        </p>
-        <p>
-          If a batch does not meet our purity and identity specifications, it is not sold. That standard is non-negotiable.
-        </p>
-      </div>
-
-      <div class="grid grid-cols-3 gap-4 mt-12 text-center">
-        <div class="bg-white border border-gray-200 rounded-xl p-4 shadow-sm">
-          <p class="text-2xl font-bold text-forest">≥99%</p>
-          <p class="text-xs text-gray-500 mt-1">Purity Spec</p>
-        </div>
-        <div class="bg-white border border-gray-200 rounded-xl p-4 shadow-sm">
-          <p class="text-2xl font-bold text-forest">CoA</p>
-          <p class="text-xs text-gray-500 mt-1">Per Batch</p>
-        </div>
-        <div class="bg-white border border-gray-200 rounded-xl p-4 shadow-sm">
-          <p class="text-2xl font-bold text-forest">US</p>
-          <p class="text-xs text-gray-500 mt-1">Shipping</p>
-        </div>
-      </div>
+      <h1 class="text-3xl font-bold mb-4">About Precision Sequence</h1>
+      <p class="text-gray-600 mb-4">Precision Sequence supplies research-grade peptides for laboratory and scientific investigation. We hold ourselves to the highest standard because your research demands it.</p>
+      <p class="text-gray-600 mb-4">Every product is independently tested and verified to meet 99%+ purity. We provide Certificates of Analysis and focus exclusively on research use.</p>
+      <p class="text-gray-600">All products are intended solely for laboratory research. Not for human or animal consumption. Not FDA-approved.</p>
     </div>
   </main>
-
-  <footer class="border-t border-gray-200 py-8 px-6 text-center text-xs text-gray-500 bg-white">
-    © 2026 Precision Sequence • Research Use Only
-  </footer>
+  <section class="py-4 px-4 text-center text-xs text-gray-500 border-t border-gray-200"><strong>RESEARCH USE ONLY.</strong> Not for human or animal consumption. Not FDA-approved. 21+</section>
+  <footer class="bg-forest-dark text-white py-8 px-4"><div class="max-w-7xl mx-auto text-center text-sm"><img src="precisionsequence logo.jpg" alt="Precision Sequence" class="h-10 mx-auto mb-3 bg-white rounded px-1"><p class="text-gray-300 text-xs">© 2026 Precision Sequence. Research use only.</p></div></footer>
+  <div id="cartSidebar" class="fixed top-0 right-0 h-full w-full max-w-md bg-white border-l z-50 transform translate-x-full transition-transform duration-300 overflow-y-auto"><div class="p-5"><div class="flex justify-between mb-4"><h3 class="font-bold">Cart</h3><button onclick="toggleCart()" class="text-2xl">×</button></div><div id="cartItems" class="mb-4"></div><div class="border-t pt-4"><div class="flex justify-between mb-3"><span>Subtotal</span><span id="cartTotal" class="font-semibold">$0.00</span></div><button class="w-full bg-forest text-white py-3 rounded-lg">Checkout (Demo)</button></div></div></div>
+  <div id="cartOverlay" onclick="toggleCart()" class="fixed inset-0 bg-black/40 z-40 hidden"></div>
+  <script src="script.js"></script>
 </body>
 </html>
