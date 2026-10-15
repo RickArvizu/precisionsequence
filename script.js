@@ -1,6 +1,6 @@
 // Precision Sequence - Main Script
 
-const VIAL_IMG = 'vial.svg';
+const LOGO_IMG = 'precisionsequence logo.jpg';
 
 const PRODUCTS = [
   { id: 'bpc157-5', name: 'BPC-157', size: '5mg', price: 52.00, purity: '≥99%', category: 'Tissue & Repair', description: 'Research peptide for studies involving tissue signaling and cellular repair pathways.' },
@@ -77,8 +77,12 @@ function renderProducts(containerId = 'productGrid', limit = 8) {
   const productsToShow = limit ? PRODUCTS.slice(0, limit) : PRODUCTS;
   container.innerHTML = productsToShow.map(p => `
     <div class="product-card bg-white border border-gray-200 rounded-xl overflow-hidden flex flex-col shadow-sm hover:shadow-md">
-      <div class="bg-gray-50 flex items-center justify-center p-2 h-64">
-        <img src="${VIAL_IMG}" alt="${p.name}" class="h-full object-contain">
+      <div class="bg-gray-50 flex items-center justify-center p-3 h-64 relative">
+        <div class="w-32 h-48 bg-white border-2 border-gray-300 rounded-lg flex flex-col items-center justify-center shadow-inner">
+          <img src="${LOGO_IMG}" alt="Precision Sequence" class="w-24 h-auto object-contain mb-2">
+          <p class="text-[10px] text-forest font-semibold">Research Grade</p>
+          <p class="text-[9px] text-gray-500">${p.size}</p>
+        </div>
       </div>
       <div class="p-4 flex flex-col flex-1">
         <span class="text-[10px] font-semibold uppercase tracking-wide text-forest mb-1">${p.category}</span>
