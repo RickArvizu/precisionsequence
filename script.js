@@ -9,6 +9,7 @@ const PRODUCTS = [
   { id: 'bpc-tb-blend', name: 'BPC-157 & TB-500 Blend', size: '10mg', price: 115.00, purity: '≥99%', category: 'Blends', description: 'Research blend of BPC-157 and TB-500 for combined tissue pathway studies.' },
   { id: 'ipamorelin-5', name: 'Ipamorelin', size: '5mg', price: 46.00, purity: '≥99%', category: 'GH Research', description: 'Selective growth hormone secretagogue for research applications.' },
   { id: 'sermorelin-5', name: 'Sermorelin', size: '5mg', price: 43.00, purity: '≥99%', category: 'GH Research', description: 'Growth hormone-releasing hormone analog for endocrine research.' },
+  { id: 'sermorelin-10', name: 'Sermorelin', size: '10mg', price: 78.00, purity: '≥99%', category: 'GH Research', description: 'Growth hormone-releasing hormone analog for endocrine research.' },
   { id: 'tesamorelin-5', name: 'Tesamorelin', size: '5mg', price: 73.00, purity: '≥99%', category: 'GH Research', description: 'GHRH analog for research into growth hormone pathways.' },
   { id: 'tesamorelin-10', name: 'Tesamorelin', size: '10mg', price: 92.00, purity: '≥99%', category: 'GH Research', description: 'GHRH analog for research into growth hormone pathways.' }
 ];
@@ -31,7 +32,7 @@ function renderProducts(containerId = 'productGrid', limit = 8) {
   if (!container) return;
   const productsToShow = limit ? PRODUCTS.slice(0, limit) : PRODUCTS;
   container.innerHTML = productsToShow.map(p => `
-    <div class="product-card bg-white border border-gray-200 rounded-xl overflow-hidden flex flex-col shadow-sm hover:shadow-md">
+    <a href="product.html?id=${p.id}" class="product-card bg-white border border-gray-200 rounded-xl overflow-hidden flex flex-col shadow-sm hover:shadow-md hover:border-forest transition">
       <div class="bg-black flex items-center justify-center p-4 h-64">
         <img src="${BOTTLE_IMG}" alt="${p.name}" class="h-full object-contain">
       </div>
@@ -42,11 +43,42 @@ function renderProducts(containerId = 'productGrid', limit = 8) {
         <p class="text-xs text-gray-500 mb-3 flex-1 line-clamp-2">${p.description}</p>
         <div class="flex items-center justify-between mt-auto">
           <span class="text-lg font-bold text-gray-900">$${p.price.toFixed(2)}</span>
-          <button onclick="addToCart('${p.id}')" class="bg-forest hover:bg-forest-dark text-white text-xs font-semibold px-3 py-2 rounded-lg">Add to Cart</button>
+          <span class="bg-forest text-white text-xs font-semibold px-3 py-2 rounded-lg">View</span>
         </div>
       </div>
-    </div>
+    </a>
   `).join('');
+}
+
+function renderProductPage() {
+  const params = new URLSearchParams(window.location.search);
+  const id = params.get('id');
+  const product = PRODUCTS.find(p => p.id === id);
+  const container = document.getElementById('productDetail');
+  if (!container || !product) {
+    if (container) container.innerHTML = '<p class="text-center py-12">Product not found. <a href="shop.html" class="text-forest">Back to shop</a></p>';
+    return;
+  }
+  document.title = `${product.name} - ${product.size} | Research Peptide | Precision Sequence`;
+  container.innerHTML = `
+    <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-10 py-10 px-4">
+      <div class="bg-black rounded-xl flex items-center justify-center p-8">
+        <img src="${BOTTLE_IMG}" alt="${product.name}" class="max-h-96 object-contain">
+      </div>
+      <div>
+        <p class="text-forest text-sm font-semibold uppercase tracking-wide mb-2">${product.category}</p>
+        <h1 class="text-3xl font-bold mb-2">${product.name}</h1>
+        <p class="text-gray-500 mb-4">${product.size} • ${product.purity} Purity</p>
+        <p class="text-gray-600 mb-6">${product.description}</p>
+        <p class="text-sm text-gray-500 mb-6"><strong>RESEARCH USE ONLY.</strong> Not for human or animal consumption. Not FDA-approved.</p>
+        <div class="flex items-center gap-4 mb-6">
+          <span class="text-3xl font-bold">$${product.price.toFixed(2)}</span>
+        </div>
+        <button onclick="addToCart('${product.id}')" class="bg-forest hover:bg-forest-dark text-white font-semibold px-8 py-3 rounded-lg">Add to Cart</button>
+        <a href="shop.html" class="block mt-4 text-forest text-sm">← Back to Shop</a>
+      </div>
+    </div>
+  `;
 }
 
 function addToCart(productId) {
@@ -56,10 +88,12 @@ function addToCart(productId) {
   if (existing) { existing.qty += 1; } else { cart.push({ ...product, qty: 1 }); }
   localStorage.setItem('ps_cart', JSON.stringify(cart));
   updateCartUI();
-  const btn = event.target;
-  const original = btn.textContent;
-  btn.textContent = 'Added';
-  setTimeout(() => btn.textContent = original, 1000);
+  if (event && event.target) {
+    const btn = event.target;
+    const original = btn.textContent;
+    btn.textContent = 'Added';
+    setTimeout(() => btn.textContent = original, 1000);
+  }
 }
 
 function updateCartUI() {
@@ -106,4 +140,5 @@ document.addEventListener('DOMContentLoaded', () => {
   renderProducts();
   updateCartUI();
   if (document.getElementById('allProducts')) renderProducts('allProducts', 0);
+  if (document.getElementById('productDetail')) renderProductPage();
 });
