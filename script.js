@@ -1,17 +1,14 @@
 // Precision Sequence - Main Script
 
-const BOTTLE_IMG = 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=400&h=500&fit=crop';
-
 const PRODUCTS = [
-  { id: 'bpc157-5', name: 'BPC-157', size: '5mg', price: 52.00, purity: '≥99%', category: 'Tissue & Repair', description: 'Research peptide for studies involving tissue signaling and cellular repair pathways.' },
-  { id: 'bpc157-10', name: 'BPC-157', size: '10mg', price: 92.00, purity: '≥99%', category: 'Tissue & Repair', description: 'Research peptide for studies involving tissue signaling and cellular repair pathways.' },
-  { id: 'tb500-10', name: 'TB-500 (Thymosin Beta-4)', size: '10mg', price: 124.00, purity: '≥99%', category: 'Tissue & Repair', description: 'Thymosin Beta-4 fragment studied in research models of cellular migration and repair.' },
-  { id: 'bpc-tb-blend', name: 'BPC-157 & TB-500 Blend', size: '10mg', price: 115.00, purity: '≥99%', category: 'Blends', description: 'Research blend of BPC-157 and TB-500 for combined tissue pathway studies.' },
-  { id: 'ipamorelin-5', name: 'Ipamorelin', size: '5mg', price: 46.00, purity: '≥99%', category: 'GH Research', description: 'Selective growth hormone secretagogue for research applications.' },
-  { id: 'sermorelin-5', name: 'Sermorelin', size: '5mg', price: 43.00, purity: '≥99%', category: 'GH Research', description: 'Growth hormone-releasing hormone analog for endocrine research.' },
-  { id: 'sermorelin-10', name: 'Sermorelin', size: '10mg', price: 78.00, purity: '≥99%', category: 'GH Research', description: 'Growth hormone-releasing hormone analog for endocrine research.' },
-  { id: 'tesamorelin-5', name: 'Tesamorelin', size: '5mg', price: 73.00, purity: '≥99%', category: 'GH Research', description: 'GHRH analog for research into growth hormone pathways.' },
-  { id: 'tesamorelin-10', name: 'Tesamorelin', size: '10mg', price: 92.00, purity: '≥99%', category: 'GH Research', description: 'GHRH analog for research into growth hormone pathways.' }
+  { id: 'bpc157-5', name: 'BPC-157', size: '5mg', price: 52.00, purity: '≥99%', category: 'Tissue & Repair', description: 'Research peptide for studies involving tissue signaling and cellular repair pathways.', img: 'vial-bpc.jpg' },
+  { id: 'bpc157-10', name: 'BPC-157', size: '10mg', price: 92.00, purity: '≥99%', category: 'Tissue & Repair', description: 'Research peptide for studies involving tissue signaling and cellular repair pathways.', img: 'vial-bpc.jpg' },
+  { id: 'tb500-10', name: 'TB-500 (Thymosin Beta-4)', size: '10mg', price: 124.00, purity: '≥99%', category: 'Tissue & Repair', description: 'Thymosin Beta-4 fragment studied in research models of cellular migration and repair.', img: 'vial-bpc.jpg' },
+  { id: 'sermorelin-5', name: 'Sermorelin', size: '5mg', price: 43.00, purity: '≥99%', category: 'GH Research', description: 'Growth hormone-releasing hormone analog for endocrine research.', img: 'vial-serm.jpg' },
+  { id: 'sermorelin-10', name: 'Sermorelin', size: '10mg', price: 78.00, purity: '≥99%', category: 'GH Research', description: 'Growth hormone-releasing hormone analog for endocrine research.', img: 'vial-serm.jpg' },
+  { id: 'ipamorelin-5', name: 'Ipamorelin', size: '5mg', price: 46.00, purity: '≥99%', category: 'GH Research', description: 'Selective growth hormone secretagogue for research applications.', img: 'vial-bpc.jpg' },
+  { id: 'tesamorelin-5', name: 'Tesamorelin', size: '5mg', price: 73.00, purity: '≥99%', category: 'GH Research', description: 'GHRH analog for research into growth hormone pathways.', img: 'vial-serm.jpg' },
+  { id: 'tesamorelin-10', name: 'Tesamorelin', size: '10mg', price: 92.00, purity: '≥99%', category: 'GH Research', description: 'GHRH analog for research into growth hormone pathways.', img: 'vial-serm.jpg' }
 ];
 
 let cart = JSON.parse(localStorage.getItem('ps_cart') || '[]');
@@ -33,10 +30,10 @@ function renderProducts(containerId = 'productGrid', limit = 8) {
   const productsToShow = limit ? PRODUCTS.slice(0, limit) : PRODUCTS;
   container.innerHTML = productsToShow.map(p => `
     <a href="product.html?id=${p.id}" class="product-card bg-white border border-gray-200 rounded-xl overflow-hidden flex flex-col shadow-sm hover:shadow-md hover:border-forest transition">
-      <div class="bg-black flex items-center justify-center p-4 h-64">
-        <img src="${BOTTLE_IMG}" alt="${p.name}" class="h-full object-contain">
+      <div class="bg-white flex items-center justify-center p-4 h-56">
+        <img src="${p.img}" alt="${p.name}" class="h-full object-contain" onerror="this.src='precisionsequence logo.jpg'">
       </div>
-      <div class="p-4 flex flex-col flex-1 bg-white">
+      <div class="p-4 flex flex-col flex-1 bg-white border-t border-gray-100">
         <span class="text-[10px] font-semibold uppercase tracking-wide text-forest mb-1">${p.category}</span>
         <h3 class="font-semibold text-base mb-1 text-gray-900">${p.name}</h3>
         <p class="text-xs text-gray-500 mb-2">${p.size} • ${p.purity}</p>
@@ -62,15 +59,15 @@ function renderProductPage() {
   document.title = `${product.name} - ${product.size} | Research Peptide | Precision Sequence`;
   container.innerHTML = `
     <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-10 py-10 px-4">
-      <div class="bg-black rounded-xl flex items-center justify-center p-8">
-        <img src="${BOTTLE_IMG}" alt="${product.name}" class="max-h-96 object-contain">
+      <div class="bg-white border border-gray-200 rounded-xl flex items-center justify-center p-8">
+        <img src="${product.img}" alt="${product.name}" class="max-h-80 object-contain" onerror="this.src='precisionsequence logo.jpg'">
       </div>
       <div>
         <p class="text-forest text-sm font-semibold uppercase tracking-wide mb-2">${product.category}</p>
         <h1 class="text-3xl font-bold mb-2">${product.name}</h1>
         <p class="text-gray-500 mb-4">${product.size} • ${product.purity} Purity</p>
         <p class="text-gray-600 mb-6">${product.description}</p>
-        <p class="text-sm text-gray-500 mb-6"><strong>RESEARCH USE ONLY.</strong> Not for human or animal consumption. Not FDA-approved.</p>
+        <p class="text-sm text-gray-500 mb-6"><strong>FOR RESEARCH PURPOSE ONLY.</strong> Not for human or animal consumption. Not FDA-approved.</p>
         <div class="flex items-center gap-4 mb-6">
           <span class="text-3xl font-bold">$${product.price.toFixed(2)}</span>
         </div>
