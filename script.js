@@ -75,24 +75,95 @@ function renderProductPage() {
   }
   document.title = `${product.name} - ${product.size} | Research Peptide | Precision Sequence`;
   container.innerHTML = `
-    <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-10 py-10 px-4">
-      <div class="bg-white border border-gray-200 rounded-xl flex items-center justify-center p-8">
-        <img src="${product.img}" alt="${product.name}" class="max-h-80 object-contain" onerror="this.src='precisionsequence logo.jpg'">
-      </div>
-      <div>
-        <p class="text-forest text-sm font-semibold uppercase tracking-wide mb-2">${product.category}</p>
-        <h1 class="text-3xl font-bold mb-2">${product.name}</h1>
-        <p class="text-gray-500 mb-4">${product.size} • ${product.purity} Purity</p>
-        <p class="text-gray-600 mb-6">${product.description}</p>
-        <p class="text-sm text-gray-500 mb-6"><strong>FOR RESEARCH PURPOSE ONLY.</strong> Not for human or animal consumption. Not FDA-approved.</p>
-        <div class="flex items-center gap-4 mb-6">
-          <span class="text-3xl font-bold">$${product.price.toFixed(2)}</span>
+    <div class="max-w-5xl mx-auto py-10 px-4">
+      <div class="grid md:grid-cols-2 gap-10 mb-12">
+        <div class="bg-white border border-gray-200 rounded-xl flex items-center justify-center p-8">
+          <img src="${product.img}" alt="${product.name}" class="max-h-80 object-contain" onerror="this.src='precisionsequence logo.jpg'">
         </div>
-        <button onclick="addToCart('${product.id}')" class="bg-forest hover:bg-forest-dark text-white font-semibold px-8 py-3 rounded-lg">Add to Cart</button>
-        <a href="shop.html" class="block mt-4 text-forest text-sm">← Back to Shop</a>
+        <div>
+          <p class="text-forest text-sm font-semibold uppercase tracking-wide mb-2">${product.category}</p>
+          <h1 class="text-3xl font-bold mb-2">${product.name}</h1>
+          <p class="text-gray-500 mb-4">${product.size} • ${product.purity} Purity</p>
+          <p class="text-gray-600 mb-6">${product.description}</p>
+          <p class="text-sm text-gray-500 mb-6"><strong>FOR RESEARCH PURPOSE ONLY.</strong> Not for human or animal consumption. Not FDA-approved.</p>
+          <div class="flex items-center gap-4 mb-6">
+            <span class="text-3xl font-bold">$${product.price.toFixed(2)}</span>
+          </div>
+          <button onclick="addToCart('${product.id}')" class="bg-forest hover:bg-forest-dark text-white font-semibold px-8 py-3 rounded-lg">Add to Cart</button>
+          <a href="shop.html" class="block mt-4 text-forest text-sm">← Back to Shop</a>
+        </div>
+      </div>
+
+      <div class="border-t border-gray-200 pt-8">
+        <div class="flex border-b border-gray-200 mb-6">
+          <button onclick="showTab('desc')" id="tab-desc" class="px-4 py-2 text-sm font-semibold border-b-2 border-forest text-forest">Description</button>
+          <button onclick="showTab('coa')" id="tab-coa" class="px-4 py-2 text-sm font-semibold text-gray-500 hover:text-forest">Certificate of Analysis</button>
+          <button onclick="showTab('storage')" id="tab-storage" class="px-4 py-2 text-sm font-semibold text-gray-500 hover:text-forest">Storage Instructions</button>
+        </div>
+
+        <div id="panel-desc" class="text-sm text-gray-600 space-y-4">
+          <h2 class="text-lg font-semibold text-gray-900">Description</h2>
+          <p>A single-component research material supplied for controlled research environments. Suitable for studies involving ${product.category.toLowerCase()} pathway characterization and method development in model systems.</p>
+          <h3 class="font-semibold text-gray-900">Composition</h3>
+          <ul class="list-disc list-inside">
+            <li>${product.name}</li>
+            <li>Appearance: Lyophilized powder in a sealed research vial</li>
+          </ul>
+          <h3 class="font-semibold text-gray-900">Research Focus (non-clinical)</h3>
+          <ul class="list-disc list-inside">
+            <li>Peptide identity and purity assessment via HPLC/LC-MS</li>
+            <li>Assay development and calibration for quantitative analysis</li>
+            <li>Chromatographic method optimization for impurity profiling</li>
+            <li>Stability characterization under laboratory storage conditions</li>
+          </ul>
+          <p>For qualified research professionals and institutional laboratories. Not for human use.</p>
+          <h3 class="font-semibold text-gray-900">Important Notice</h3>
+          <p>This product is intended for laboratory research use only. It is not intended for human or veterinary use, and must not be used for diagnostic, therapeutic, or clinical purposes. This material is not a drug, medical device, or dietary supplement, and has not been evaluated by the U.S. Food and Drug Administration.</p>
+        </div>
+
+        <div id="panel-coa" class="hidden text-sm text-gray-600 space-y-4">
+          <h2 class="text-lg font-semibold text-gray-900">Certificate of Analysis</h2>
+          <p>Every batch undergoes independent third-party laboratory analysis to verify identity, potency, and purity. Testing includes quantitative assay verification and comprehensive analysis.</p>
+          <ul class="list-disc list-inside">
+            <li>Third-Party Lab Verified</li>
+            <li>Quantitative Assay</li>
+            <li>HPLC Analysis</li>
+            <li>Mass Spectrometry</li>
+          </ul>
+          <p class="text-xs text-gray-500">Testing performed per USP compendial standards by independent analytical laboratory. Certificates of Analysis are available upon request for each batch.</p>
+          <p><strong>Purity:</strong> Verified ≥99%, confirmed by independent third-party testing.</p>
+        </div>
+
+        <div id="panel-storage" class="hidden text-sm text-gray-600 space-y-4">
+          <h2 class="text-lg font-semibold text-gray-900">Storage Instructions</h2>
+          <p>All products from Precision Sequence are manufactured using a lyophilization (freeze-drying) process. This method maintains product integrity and allows vials to remain stable during shipping for approximately 3–4 months.</p>
+          <h3 class="font-semibold text-gray-900">Lyophilized Peptides</h3>
+          <ul class="list-disc list-inside">
+            <li>Store at -20°C for long-term storage (up to 24 months)</li>
+            <li>Store at 2–8°C (refrigerated) for short-term storage (up to 3 months)</li>
+            <li>Keep away from light, moisture, and repeated temperature fluctuations</li>
+          </ul>
+          <h3 class="font-semibold text-gray-900">After Reconstitution</h3>
+          <p>Once a vial is reconstituted with bacteriostatic water, it should be stored in the refrigerator. Under these conditions, reconstituted material is generally considered stable for up to 30 days.</p>
+          <p class="text-xs text-gray-500"><strong>Important Notice:</strong> These products are intended for research use only. Not for human consumption.</p>
+        </div>
       </div>
     </div>
   `;
+}
+
+function showTab(tab) {
+  ['desc', 'coa', 'storage'].forEach(t => {
+    document.getElementById('panel-' + t).classList.toggle('hidden', t !== tab);
+    const btn = document.getElementById('tab-' + t);
+    if (t === tab) {
+      btn.classList.add('border-b-2', 'border-forest', 'text-forest');
+      btn.classList.remove('text-gray-500');
+    } else {
+      btn.classList.remove('border-b-2', 'border-forest', 'text-forest');
+      btn.classList.add('text-gray-500');
+    }
+  });
 }
 
 function addToCart(productId) {
