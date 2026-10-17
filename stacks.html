@@ -13,7 +13,7 @@
   <style>
     body, html { background: #ffffff !important; }
     .vial-group { display: flex; align-items: flex-end; justify-content: center; }
-    .vial-group img { height: 140px; object-fit: contain; margin: 0 -12px; }
+    .vial-group img { height: 180px; object-fit: contain; margin: 0 -20px; }
   </style>
 </head>
 <body class="bg-white text-gray-900 font-sans">
@@ -43,171 +43,166 @@
       </button>
     </div>
   </header>
-  <main class="py-12 px-4 bg-white">
+  <main class="py-8 px-4 bg-white">
     <div class="max-w-7xl mx-auto">
-      <div class="flex items-center gap-4 mb-4">
-        <img src="precisionsequence logo.jpg" alt="Precision Sequence" class="h-16 w-auto bg-white rounded px-2">
-        <div>
-          <h1 class="text-3xl font-bold">Research Compound Bundles</h1>
-          <p class="text-gray-500">Itemized compounds for in-vitro laboratory research only. Not for human or animal use.</p>
-        </div>
+      <div class="mb-8">
+        <h1 class="text-4xl font-bold">Research compound bundles.</h1>
+        <p class="text-gray-500 mt-2">Itemized compounds for in-vitro laboratory research only. Not for human or animal use, consumption, administration, or cosmetic use.</p>
       </div>
-      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
-        <a href="stack-metabolix.html" class="border border-gray-200 rounded-xl overflow-hidden bg-white hover:shadow-lg transition">
-          <div class="bg-gray-50 flex items-center justify-center p-4 h-48">
+      <div class="flex items-center justify-between mb-6">
+        <span class="text-sm font-medium">Search & Filter</span>
+        <select class="border rounded-full px-4 py-2 text-sm">
+          <option>Featured</option>
+          <option>Price: Low to High</option>
+          <option>Price: High to Low</option>
+        </select>
+      </div>
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 lg:gap-6">
+        <a href="stack-metabolix.html" class="group">
+          <div class="aspect-square bg-gray-50 rounded-2xl flex items-center justify-center overflow-hidden mb-3">
             <div class="vial-group">
               <img src="vial-tesa.jpg" alt="Tesamorelin">
               <img src="vial-aod.jpg" alt="5-Amino-1MQ">
             </div>
           </div>
-          <div class="p-6 border-t border-gray-100">
-            <span class="text-xs font-semibold text-forest uppercase">Stack</span>
-            <h3 class="text-xl font-bold mt-2">Metabolix Bundle</h3>
-            <p class="text-sm text-gray-500 mt-1">Tesamorelin · 5-Amino-1MQ</p>
-            <p class="text-2xl font-bold mt-4">$220.50</p>
-            <p class="text-xs text-gray-400 mt-2">FOR LABORATORY RESEARCH ONLY</p>
-          </div>
+          <span class="text-xs text-gray-400 uppercase">Stack</span>
+          <p class="text-lg font-bold">$220.50</p>
+          <h3 class="font-semibold">METABOLIX Bundle</h3>
+          <p class="text-sm text-gray-500">Tesamorelin · 5-Amino-1MQ</p>
+          <p class="text-xs text-gray-400 mt-1">FOR LABORATORY RESEARCH ONLY</p>
+          <button class="mt-3 w-full border border-forest text-forest py-2 rounded-lg text-sm font-semibold group-hover:bg-forest group-hover:text-white transition">Add to cart</button>
         </a>
-        <a href="stack-ascend.html" class="border border-gray-200 rounded-xl overflow-hidden bg-white hover:shadow-lg transition">
-          <div class="bg-gray-50 flex items-center justify-center p-4 h-48">
+        <a href="stack-ascend.html" class="group">
+          <div class="aspect-square bg-gray-50 rounded-2xl flex items-center justify-center overflow-hidden mb-3">
             <div class="vial-group">
               <img src="vial-ghk.jpg" alt="GHK-Cu">
               <img src="vial-melanotan1.jpg" alt="Melanotan-1">
             </div>
           </div>
-          <div class="p-6 border-t border-gray-100">
-            <span class="text-xs font-semibold text-forest uppercase">Stack</span>
-            <h3 class="text-xl font-bold mt-2">Ascend Bundle</h3>
-            <p class="text-sm text-gray-500 mt-1">GHK-Cu · Melanotan-1</p>
-            <p class="text-2xl font-bold mt-4">$170.00</p>
-            <p class="text-xs text-gray-400 mt-2">FOR LABORATORY RESEARCH ONLY</p>
-          </div>
+          <span class="text-xs text-gray-400 uppercase">Stack</span>
+          <p class="text-lg font-bold">$170.00</p>
+          <h3 class="font-semibold">ASCEND Bundle</h3>
+          <p class="text-sm text-gray-500">GHK-Cu · Melanotan-1</p>
+          <p class="text-xs text-gray-400 mt-1">FOR LABORATORY RESEARCH ONLY</p>
+          <button class="mt-3 w-full border border-forest text-forest py-2 rounded-lg text-sm font-semibold group-hover:bg-forest group-hover:text-white transition">Add to cart</button>
         </a>
-        <a href="stack-prime.html" class="border border-gray-200 rounded-xl overflow-hidden bg-white hover:shadow-lg transition">
-          <div class="bg-gray-50 flex items-center justify-center p-4 h-48">
+        <a href="stack-prime.html" class="group">
+          <div class="aspect-square bg-gray-50 rounded-2xl flex items-center justify-center overflow-hidden mb-3">
             <div class="vial-group">
               <img src="vial-tb.jpg" alt="TB-500">
               <img src="vial-nad.jpg" alt="NAD+">
               <img src="vial-mots.jpg" alt="MOTS-C">
             </div>
           </div>
-          <div class="p-6 border-t border-gray-100">
-            <span class="text-xs font-semibold text-forest uppercase">Stack</span>
-            <h3 class="text-xl font-bold mt-2">Prime Bundle</h3>
-            <p class="text-sm text-gray-500 mt-1">TB-500 · NAD+ · MOTS-C</p>
-            <p class="text-2xl font-bold mt-4">$315.00</p>
-            <p class="text-xs text-gray-400 mt-2">FOR LABORATORY RESEARCH ONLY</p>
-          </div>
+          <span class="text-xs text-gray-400 uppercase">Stack</span>
+          <p class="text-lg font-bold">$315.00</p>
+          <h3 class="font-semibold">PRIME Bundle</h3>
+          <p class="text-sm text-gray-500">TB-500 · NAD+ · MOTS-C</p>
+          <p class="text-xs text-gray-400 mt-1">FOR LABORATORY RESEARCH ONLY</p>
+          <button class="mt-3 w-full border border-forest text-forest py-2 rounded-lg text-sm font-semibold group-hover:bg-forest group-hover:text-white transition">Add to cart</button>
         </a>
-        <a href="stack-neuro.html" class="border border-gray-200 rounded-xl overflow-hidden bg-white hover:shadow-lg transition">
-          <div class="bg-gray-50 flex items-center justify-center p-4 h-48">
+        <a href="stack-neuro.html" class="group">
+          <div class="aspect-square bg-gray-50 rounded-2xl flex items-center justify-center overflow-hidden mb-3">
             <div class="vial-group">
               <img src="vial-dsip.jpg" alt="DSIP">
               <img src="vial-selank.jpg" alt="Selank">
               <img src="vial-epithalon.jpg" alt="Epithalon">
             </div>
           </div>
-          <div class="p-6 border-t border-gray-100">
-            <span class="text-xs font-semibold text-forest uppercase">Stack</span>
-            <h3 class="text-xl font-bold mt-2">Neuro Bundle</h3>
-            <p class="text-sm text-gray-500 mt-1">DSIP · Selank · Epithalon</p>
-            <p class="text-2xl font-bold mt-4">$153.00</p>
-            <p class="text-xs text-gray-400 mt-2">FOR LABORATORY RESEARCH ONLY</p>
-          </div>
+          <span class="text-xs text-gray-400 uppercase">Stack</span>
+          <p class="text-lg font-bold">$153.00</p>
+          <h3 class="font-semibold">NEURO Bundle</h3>
+          <p class="text-sm text-gray-500">DSIP · Selank · Epithalon</p>
+          <p class="text-xs text-gray-400 mt-1">FOR LABORATORY RESEARCH ONLY</p>
+          <button class="mt-3 w-full border border-forest text-forest py-2 rounded-lg text-sm font-semibold group-hover:bg-forest group-hover:text-white transition">Add to cart</button>
         </a>
-        <a href="stack-wolverine.html" class="border border-gray-200 rounded-xl overflow-hidden bg-white hover:shadow-lg transition">
-          <div class="bg-gray-50 flex items-center justify-center p-4 h-48">
+        <a href="stack-wolverine.html" class="group">
+          <div class="aspect-square bg-gray-50 rounded-2xl flex items-center justify-center overflow-hidden mb-3">
             <div class="vial-group">
               <img src="vial-bpc.jpg" alt="BPC-157">
               <img src="vial-tb.jpg" alt="TB-500">
               <img src="vial-ipa.jpg" alt="Ipamorelin">
             </div>
           </div>
-          <div class="p-6 border-t border-gray-100">
-            <span class="text-xs font-semibold text-forest uppercase">Stack</span>
-            <h3 class="text-xl font-bold mt-2">Wolverine Bundle</h3>
-            <p class="text-sm text-gray-500 mt-1">BPC-157 · TB-500 · Ipamorelin</p>
-            <p class="text-2xl font-bold mt-4">$171.00</p>
-            <p class="text-xs text-gray-400 mt-2">FOR LABORATORY RESEARCH ONLY</p>
-          </div>
+          <span class="text-xs text-gray-400 uppercase">Stack</span>
+          <p class="text-lg font-bold">$171.00</p>
+          <h3 class="font-semibold">WOLVERINE Bundle</h3>
+          <p class="text-sm text-gray-500">BPC-157 · TB-500 · Ipamorelin</p>
+          <p class="text-xs text-gray-400 mt-1">FOR LABORATORY RESEARCH ONLY</p>
+          <button class="mt-3 w-full border border-forest text-forest py-2 rounded-lg text-sm font-semibold group-hover:bg-forest group-hover:text-white transition">Add to cart</button>
         </a>
-        <a href="stack-ironclad.html" class="border border-gray-200 rounded-xl overflow-hidden bg-white hover:shadow-lg transition">
-          <div class="bg-gray-50 flex items-center justify-center p-4 h-48">
+        <a href="stack-ironclad.html" class="group">
+          <div class="aspect-square bg-gray-50 rounded-2xl flex items-center justify-center overflow-hidden mb-3">
             <div class="vial-group">
               <img src="vial-cjc.jpg" alt="CJC-1295">
               <img src="vial-tb.jpg" alt="TB-500">
               <img src="vial-bpc.jpg" alt="BPC-157">
             </div>
           </div>
-          <div class="p-6 border-t border-gray-100">
-            <span class="text-xs font-semibold text-forest uppercase">Stack</span>
-            <h3 class="text-xl font-bold mt-2">Ironclad Bundle</h3>
-            <p class="text-sm text-gray-500 mt-1">CJC-1295 · TB-500 · BPC-157 · Ipamorelin</p>
-            <p class="text-2xl font-bold mt-4">$247.50</p>
-            <p class="text-xs text-gray-400 mt-2">FOR LABORATORY RESEARCH ONLY</p>
-          </div>
+          <span class="text-xs text-gray-400 uppercase">Stack</span>
+          <p class="text-lg font-bold">$247.50</p>
+          <h3 class="font-semibold">IRONCLAD Bundle</h3>
+          <p class="text-sm text-gray-500">CJC-1295 · TB-500 · BPC-157</p>
+          <p class="text-xs text-gray-400 mt-1">FOR LABORATORY RESEARCH ONLY</p>
+          <button class="mt-3 w-full border border-forest text-forest py-2 rounded-lg text-sm font-semibold group-hover:bg-forest group-hover:text-white transition">Add to cart</button>
         </a>
-        <a href="stack-glow.html" class="border border-gray-200 rounded-xl overflow-hidden bg-white hover:shadow-lg transition">
-          <div class="bg-gray-50 flex items-center justify-center p-4 h-48">
+        <a href="stack-glow.html" class="group">
+          <div class="aspect-square bg-gray-50 rounded-2xl flex items-center justify-center overflow-hidden mb-3">
             <div class="vial-group">
               <img src="vial-bpc.jpg" alt="BPC-157">
               <img src="vial-tb.jpg" alt="TB-500">
               <img src="vial-ghk.jpg" alt="GHK-Cu">
             </div>
           </div>
-          <div class="p-6 border-t border-gray-100">
-            <span class="text-xs font-semibold text-forest uppercase">Stack</span>
-            <h3 class="text-xl font-bold mt-2">Glow Bundle</h3>
-            <p class="text-sm text-gray-500 mt-1">BPC-157 · TB-500 · GHK-Cu · KPV</p>
-            <p class="text-2xl font-bold mt-4">$292.50</p>
-            <p class="text-xs text-gray-400 mt-2">FOR LABORATORY RESEARCH ONLY</p>
-          </div>
+          <span class="text-xs text-gray-400 uppercase">Stack</span>
+          <p class="text-lg font-bold">$292.50</p>
+          <h3 class="font-semibold">GLOW Bundle</h3>
+          <p class="text-sm text-gray-500">BPC-157 · TB-500 · GHK-Cu</p>
+          <p class="text-xs text-gray-400 mt-1">FOR LABORATORY RESEARCH ONLY</p>
+          <button class="mt-3 w-full border border-forest text-forest py-2 rounded-lg text-sm font-semibold group-hover:bg-forest group-hover:text-white transition">Add to cart</button>
         </a>
-        <a href="stack-nad.html" class="border border-gray-200 rounded-xl overflow-hidden bg-white hover:shadow-lg transition">
-          <div class="bg-gray-50 flex items-center justify-center p-4 h-48">
+        <a href="stack-nad.html" class="group">
+          <div class="aspect-square bg-gray-50 rounded-2xl flex items-center justify-center overflow-hidden mb-3">
             <div class="vial-group">
               <img src="vial-nad.jpg" alt="NAD+">
               <img src="vial-mots.jpg" alt="MOTS-C">
             </div>
           </div>
-          <div class="p-6 border-t border-gray-100">
-            <span class="text-xs font-semibold text-forest uppercase">Stack</span>
-            <h3 class="text-xl font-bold mt-2">NAD Stack Bundle</h3>
-            <p class="text-sm text-gray-500 mt-1">NAD+ · MOTS-C · SS-31</p>
-            <p class="text-2xl font-bold mt-4">$346.50</p>
-            <p class="text-xs text-gray-400 mt-2">FOR LABORATORY RESEARCH ONLY</p>
-          </div>
+          <span class="text-xs text-gray-400 uppercase">Stack</span>
+          <p class="text-lg font-bold">$346.50</p>
+          <h3 class="font-semibold">NAD STACK Bundle</h3>
+          <p class="text-sm text-gray-500">NAD+ · MOTS-C · SS-31</p>
+          <p class="text-xs text-gray-400 mt-1">FOR LABORATORY RESEARCH ONLY</p>
+          <button class="mt-3 w-full border border-forest text-forest py-2 rounded-lg text-sm font-semibold group-hover:bg-forest group-hover:text-white transition">Add to cart</button>
         </a>
-        <a href="stack-immuno.html" class="border border-gray-200 rounded-xl overflow-hidden bg-white hover:shadow-lg transition">
-          <div class="bg-gray-50 flex items-center justify-center p-4 h-48">
+        <a href="stack-immuno.html" class="group">
+          <div class="aspect-square bg-gray-50 rounded-2xl flex items-center justify-center overflow-hidden mb-3">
             <div class="vial-group">
               <img src="vial-tb.jpg" alt="TB-500">
               <img src="vial-mots.jpg" alt="MOTS-C">
             </div>
           </div>
-          <div class="p-6 border-t border-gray-100">
-            <span class="text-xs font-semibold text-forest uppercase">Stack</span>
-            <h3 class="text-xl font-bold mt-2">Immuno Bundle</h3>
-            <p class="text-sm text-gray-500 mt-1">TB-500 · KPV · MOTS-C</p>
-            <p class="text-2xl font-bold mt-4">$292.50</p>
-            <p class="text-xs text-gray-400 mt-2">FOR LABORATORY RESEARCH ONLY</p>
-          </div>
+          <span class="text-xs text-gray-400 uppercase">Stack</span>
+          <p class="text-lg font-bold">$292.50</p>
+          <h3 class="font-semibold">IMMUNO Bundle</h3>
+          <p class="text-sm text-gray-500">TB-500 · KPV · MOTS-C</p>
+          <p class="text-xs text-gray-400 mt-1">FOR LABORATORY RESEARCH ONLY</p>
+          <button class="mt-3 w-full border border-forest text-forest py-2 rounded-lg text-sm font-semibold group-hover:bg-forest group-hover:text-white transition">Add to cart</button>
         </a>
-        <a href="stack-pulse.html" class="border border-gray-200 rounded-xl overflow-hidden bg-white hover:shadow-lg transition">
-          <div class="bg-gray-50 flex items-center justify-center p-4 h-48">
+        <a href="stack-pulse.html" class="group">
+          <div class="aspect-square bg-gray-50 rounded-2xl flex items-center justify-center overflow-hidden mb-3">
             <div class="vial-group">
               <img src="vial-cjc.jpg" alt="CJC-1295">
               <img src="vial-serm.jpg" alt="Sermorelin">
               <img src="vial-ipa.jpg" alt="Ipamorelin">
             </div>
           </div>
-          <div class="p-6 border-t border-gray-100">
-            <span class="text-xs font-semibold text-forest uppercase">Stack</span>
-            <h3 class="text-xl font-bold mt-2">Pulse Bundle</h3>
-            <p class="text-sm text-gray-500 mt-1">CJC-1295 · Sermorelin · Ipamorelin</p>
-            <p class="text-2xl font-bold mt-4">$153.00</p>
-            <p class="text-xs text-gray-400 mt-2">FOR LABORATORY RESEARCH ONLY</p>
-          </div>
+          <span class="text-xs text-gray-400 uppercase">Stack</span>
+          <p class="text-lg font-bold">$153.00</p>
+          <h3 class="font-semibold">PULSE Bundle</h3>
+          <p class="text-sm text-gray-500">CJC-1295 · Sermorelin · Ipamorelin</p>
+          <p class="text-xs text-gray-400 mt-1">FOR LABORATORY RESEARCH ONLY</p>
+          <button class="mt-3 w-full border border-forest text-forest py-2 rounded-lg text-sm font-semibold group-hover:bg-forest group-hover:text-white transition">Add to cart</button>
         </a>
       </div>
     </div>
