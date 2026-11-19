@@ -1,24 +1,24 @@
 // Precision Sequence - Main Script
 
 const PRODUCTS = [
-  { id: 'retatrutide-10', name: 'Retatrutide', size: '10 mg', price: 60.33, purity: '≥99%', category: 'Metabolic', description: 'Triple agonist (GLP-1 / GIP / glucagon) for metabolic research.', img: 'vial.jpg' },
-  { id: 'retatrutide-30', name: 'Retatrutide', size: '30 mg', price: 106.03, purity: '≥99%', category: 'Metabolic', description: 'Triple agonist (GLP-1 / GIP / glucagon) for metabolic research.', img: 'vial.jpg' },
-  { id: 'nad-1000', name: 'NAD+', size: '1000 mg', price: 74.59, purity: '≥99%', category: 'Cellular', description: 'Nicotinamide adenine dinucleotide for cellular research.', img: 'vial-nad.jpg' },
-  { id: 'klow-80', name: 'KLOW', size: '80 mg', price: 144.79, purity: '≥99%', category: 'Tissue & Repair', description: 'Multi-peptide research blend for tissue remodeling and recovery studies.', img: 'vial.jpg' },
-  { id: 'cjc-ipa', name: 'CJC-1295 (no DAC) + IPA', size: 'Blend', price: 76.78, purity: '≥99%', category: 'GH Research', description: 'GHRH analog + selective GH secretagogue combination for research.', img: 'vial-cjc.jpg' },
-  { id: 'ghk-cu-100', name: 'GHK-Cu', size: '100 mg', price: 23.40, purity: '≥99%', category: 'Copper Peptides', description: 'Copper peptide for research into skin and tissue pathways.', img: 'vial-ghk.jpg' },
-  { id: 'mots-c-40', name: 'MOTS-c', size: '40 mg', price: 45.34, purity: '≥99%', category: 'Metabolic', description: 'Mitochondrial-derived peptide for metabolic research.', img: 'vial-mots.jpg' },
-  { id: '5-amino-1mq', name: '5-Amino-1MQ', size: 'Standard', price: 32.91, purity: '≥99%', category: 'Metabolic', description: 'Small molecule for NNMT and metabolic pathway research.', img: 'vial.jpg' },
-  { id: 'tesamorelin', name: 'Tesamorelin', size: 'Standard', price: 108.23, purity: '≥99%', category: 'GH Research', description: 'GHRH analog for research into growth hormone pathways.', img: 'vial-tesa.jpg' },
+  { id: 'retatrutide-10', name: 'Retatrutide', size: '10 mg', price: 60.33, purity: '≥99%', category: 'Metabolic', description: 'Triple agonist (GLP-1 / GIP / glucagon) for metabolic research.', img: 'vial-retatrutide-10.jpg' },
+  { id: 'retatrutide-30', name: 'Retatrutide', size: '30 mg', price: 106.03, purity: '≥99%', category: 'Metabolic', description: 'Triple agonist (GLP-1 / GIP / glucagon) for metabolic research.', img: 'vial-retatrutide-30.jpg' },
+  { id: 'nad-1000', name: 'NAD+', size: '1000 mg', price: 74.59, purity: '≥99%', category: 'Cellular', description: 'Nicotinamide adenine dinucleotide for cellular research.', img: 'vial-nad-1000.jpg' },
+  { id: 'klow-80', name: 'KLOW', size: '80 mg', price: 144.79, purity: '≥99%', category: 'Tissue & Repair', description: 'Multi-peptide research blend for tissue remodeling and recovery studies.', img: 'vial-klow.jpg' },
+  { id: 'cjc-ipa', name: 'CJC-1295 (no DAC) + IPA', size: 'Blend', price: 76.78, purity: '≥99%', category: 'GH Research', description: 'GHRH analog + selective GH secretagogue combination for research.', img: 'vial-cjc-ipa.jpg' },
+  { id: 'ghk-cu-100', name: 'GHK-Cu', size: '100 mg', price: 23.40, purity: '≥99%', category: 'Copper Peptides', description: 'Copper peptide for research into skin and tissue pathways.', img: 'vial-ghk-cu-100.jpg' },
+  { id: 'mots-c-40', name: 'MOTS-c', size: '40 mg', price: 45.34, purity: '≥99%', category: 'Metabolic', description: 'Mitochondrial-derived peptide for metabolic research.', img: 'vial-mots-c-40.jpg' },
+  { id: '5-amino-1mq', name: '5-Amino-1MQ', size: 'Standard', price: 32.91, purity: '≥99%', category: 'Metabolic', description: 'Small molecule for NNMT and metabolic pathway research.', img: 'vial-5amino.jpg' },
+  { id: 'tesamorelin', name: 'Tesamorelin', size: 'Standard', price: 108.23, purity: '≥99%', category: 'GH Research', description: 'GHRH analog for research into growth hormone pathways.', img: 'vial-tesamorelin.jpg' },
   { id: 'dsip', name: 'DSIP', size: 'Standard', price: 57.04, purity: '≥99%', category: 'Neurological', description: 'Delta sleep-inducing peptide for research.', img: 'vial-dsip.jpg' },
-  { id: 'wolverine-20', name: 'Wolverine', size: '20 mg', price: 71.66, purity: '≥99%', category: 'Tissue & Repair', description: 'BPC-157 + TB-500 research blend for tissue repair studies.', img: 'vial-bpc.jpg' },
+  { id: 'wolverine-20', name: 'Wolverine', size: '20 mg', price: 71.66, purity: '≥99%', category: 'Tissue & Repair', description: 'BPC-157 + TB-500 research blend for tissue repair studies.', img: 'vial-wolverine-20.jpg' },
   { id: 'epithalon', name: 'Epithalon', size: 'Standard', price: 35.10, purity: '≥99%', category: 'Anti-Aging', description: 'Synthetic peptide for longevity research.', img: 'vial-epithalon.jpg' },
-  { id: 'ipamorelin', name: 'Ipamorelin', size: 'Standard', price: 49.73, purity: '≥99%', category: 'GH Research', description: 'Selective growth hormone secretagogue for research applications.', img: 'vial-ipa.jpg' },
-  { id: 'glutathione', name: 'Glutathione', size: 'Standard', price: 35.83, purity: '≥99%', category: 'Cellular', description: 'Endogenous antioxidant for cellular research.', img: 'vial.jpg' },
-  { id: 'selank', name: 'Selank', size: 'Standard', price: 49.73, purity: '≥99%', category: 'Neurological', description: 'Synthetic peptide for neurological research.', img: 'vial.jpg' },
+  { id: 'ipamorelin', name: 'Ipamorelin', size: 'Standard', price: 49.73, purity: '≥99%', category: 'GH Research', description: 'Selective growth hormone secretagogue for research applications.', img: 'vial-ipamorelin.jpg' },
+  { id: 'glutathione', name: 'Glutathione', size: 'Standard', price: 35.83, purity: '≥99%', category: 'Cellular', description: 'Endogenous antioxidant for cellular research.', img: 'vial-glutathione.jpg' },
+  { id: 'selank', name: 'Selank', size: 'Standard', price: 49.73, purity: '≥99%', category: 'Neurological', description: 'Synthetic peptide for neurological research.', img: 'vial-selank.jpg' },
   { id: 'semax', name: 'Semax', size: 'Standard', price: 49.73, purity: '≥99%', category: 'Neurological', description: 'Synthetic peptide analog for neurological research.', img: 'vial-semax.jpg' },
-  { id: 'kisspeptin-10', name: 'Kisspeptin', size: '10 mg', price: 65.81, purity: '≥99%', category: 'Specialty', description: 'Neuropeptide for reproductive axis research.', img: 'vial.jpg' },
-  { id: 'bac-water', name: 'BAC Water', size: '3 ml', price: 7.31, purity: 'Research Grade', category: 'Accessories', description: 'Bacteriostatic water for peptide reconstitution research.', img: 'vial.jpg' }
+  { id: 'kisspeptin-10', name: 'Kisspeptin', size: '10 mg', price: 65.81, purity: '≥99%', category: 'Specialty', description: 'Neuropeptide for reproductive axis research.', img: 'vial-kisspeptin.jpg' },
+  { id: 'bac-water', name: 'BAC Water', size: '3 ml', price: 7.31, purity: 'Research Grade', category: 'Accessories', description: 'Bacteriostatic water for peptide reconstitution research.', img: 'vial-bac.jpg' }
 ];
 
 let cart = JSON.parse(localStorage.getItem('ps_cart') || '[]');
@@ -41,7 +41,7 @@ function renderProducts(containerId = 'productGrid', limit = 8) {
   container.innerHTML = productsToShow.map(p => `
     <a href="product.html?id=${p.id}" class="product-card bg-white border border-gray-200 rounded-xl overflow-hidden flex flex-col shadow-sm hover:shadow-md hover:border-forest transition">
       <div class="bg-white flex items-center justify-center p-4 h-56">
-        <img src="${p.img}" alt="${p.name}" class="h-full object-contain" onerror="this.src='precisionsequence logo.jpg'">
+        <img src="${p.img}" alt="${p.name}" class="h-full object-contain" onerror="this.src='vial-nad.jpg'">
       </div>
       <div class="p-4 flex flex-col flex-1 bg-white border-t border-gray-100">
         <span class="text-[10px] font-semibold uppercase tracking-wide text-forest mb-1">${p.category}</span>
@@ -71,7 +71,7 @@ function renderProductPage() {
     <div class="max-w-5xl mx-auto py-10 px-4">
       <div class="grid md:grid-cols-2 gap-10 mb-12">
         <div class="bg-white border border-gray-200 rounded-xl flex items-center justify-center p-8">
-          <img src="${product.img}" alt="${product.name}" class="max-h-80 object-contain" onerror="this.src='precisionsequence logo.jpg'">
+          <img src="${product.img}" alt="${product.name}" class="max-h-80 object-contain" onerror="this.src='vial-nad.jpg'">
         </div>
         <div>
           <p class="text-forest text-sm font-semibold uppercase tracking-wide mb-2">${product.category}</p>
