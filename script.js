@@ -1,8 +1,8 @@
 // Precision Sequence - Main Script
 
 const PRODUCTS = [
-  { id: 'retatrutide-10', name: 'Retatrutide', size: '10 mg', price: 67, purity: '≥99%', category: 'Metabolic', description: 'Triple agonist (GLP-1 / GIP / glucagon) for metabolic research.', img: 'vial-retatrutide-10.jpg' },
-  { id: 'retatrutide-30', name: 'Retatrutide', size: '30 mg', price: 117, purity: '≥99%', category: 'Metabolic', description: 'Triple agonist (GLP-1 / GIP / glucagon) for metabolic research.', img: 'vial-retatrutide-30.jpg' },
+  { id: 'retatrutide-10', name: 'Retatrutide', size: '10 mg', price: 67, purity: '≥99%', category: 'Metabolic', description: 'Triple agonist (GLP-1 / GIP / glucagon) for metabolic research.', img: 'reta 10mg vial.jpg' },
+  { id: 'retatrutide-30', name: 'Retatrutide', size: '30 mg', price: 117, purity: '≥99%', category: 'Metabolic', description: 'Triple agonist (GLP-1 / GIP / glucagon) for metabolic research.', img: 'reta 30mg vial.jpg' },
   { id: 'nad-1000', name: 'NAD+', size: '1000 mg', price: 83, purity: '≥99%', category: 'Cellular', description: 'Nicotinamide adenine dinucleotide for cellular research.', img: 'vial-nad.jpg' },
   { id: 'klow-80', name: 'KLOW', size: '80 mg', price: 160, purity: '≥99%', category: 'Tissue & Repair', description: 'Multi-peptide research blend for tissue remodeling and recovery studies.', img: 'vial-bpc.jpg' },
   { id: 'cjc-ipa', name: 'CJC-1295 (no DAC) + IPA', size: 'Blend', price: 85, purity: '≥99%', category: 'GH Research', description: 'GHRH analog + selective GH secretagogue combination for research.', img: 'vial-cjc.jpg' },
