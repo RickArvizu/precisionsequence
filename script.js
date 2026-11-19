@@ -4,21 +4,21 @@ const PRODUCTS = [
   { id: 'retatrutide-10', name: 'Retatrutide', size: '10 mg', price: 67, purity: '≥99%', category: 'Metabolic', description: 'Triple agonist (GLP-1 / GIP / glucagon) for metabolic research.', img: 'reta 10mg vial.jpg' },
   { id: 'retatrutide-30', name: 'Retatrutide', size: '30 mg', price: 117, purity: '≥99%', category: 'Metabolic', description: 'Triple agonist (GLP-1 / GIP / glucagon) for metabolic research.', img: 'reta 30mg vial.jpg' },
   { id: 'nad-1000', name: 'NAD+', size: '1000 mg', price: 83, purity: '≥99%', category: 'Cellular', description: 'Nicotinamide adenine dinucleotide for cellular research.', img: 'vial-nad.jpg' },
-  { id: 'klow-80', name: 'KLOW', size: '80 mg', price: 160, purity: '≥99%', category: 'Tissue & Repair', description: 'Multi-peptide research blend for tissue remodeling and recovery studies.', img: 'vial-bpc.jpg' },
+  { id: 'klow-80', name: 'KLOW', size: '80 mg', price: 160, purity: '≥99%', category: 'Tissue & Repair', description: 'Multi-peptide research blend for tissue remodeling and recovery studies.', img: 'KLOW vial.jpg' },
   { id: 'cjc-ipa', name: 'CJC-1295 (no DAC) + IPA', size: 'Blend', price: 85, purity: '≥99%', category: 'GH Research', description: 'GHRH analog + selective GH secretagogue combination for research.', img: 'vial-cjc.jpg' },
   { id: 'ghk-cu-100', name: 'GHK-Cu', size: '100 mg', price: 26, purity: '≥99%', category: 'Copper Peptides', description: 'Copper peptide for research into skin and tissue pathways.', img: 'vial-ghk.jpg' },
   { id: 'mots-c-40', name: 'MOTS-c', size: '40 mg', price: 50, purity: '≥99%', category: 'Metabolic', description: 'Mitochondrial-derived peptide for metabolic research.', img: 'vial-mots.jpg' },
-  { id: '5-amino-1mq', name: '5-Amino-1MQ', size: 'Standard', price: 37, purity: '≥99%', category: 'Metabolic', description: 'Small molecule for NNMT and metabolic pathway research.', img: 'vial-aod.jpg' },
+  { id: '5-amino-1mq', name: '5-Amino-1MQ', size: 'Standard', price: 37, purity: '≥99%', category: 'Metabolic', description: 'Small molecule for NNMT and metabolic pathway research.', img: '5 Amino .jpg' },
   { id: 'tesamorelin', name: 'Tesamorelin', size: 'Standard', price: 120, purity: '≥99%', category: 'GH Research', description: 'GHRH analog for research into growth hormone pathways.', img: 'vial-tesa.jpg' },
   { id: 'dsip', name: 'DSIP', size: 'Standard', price: 63, purity: '≥99%', category: 'Neurological', description: 'Delta sleep-inducing peptide for research.', img: 'vial-dsip.jpg' },
   { id: 'wolverine-20', name: 'Wolverine', size: '20 mg', price: 79, purity: '≥99%', category: 'Tissue & Repair', description: 'BPC-157 + TB-500 research blend for tissue repair studies.', img: 'vial-bpc.jpg' },
   { id: 'epithalon', name: 'Epithalon', size: 'Standard', price: 39, purity: '≥99%', category: 'Anti-Aging', description: 'Synthetic peptide for longevity research.', img: 'vial-epithalon.jpg' },
   { id: 'ipamorelin', name: 'Ipamorelin', size: 'Standard', price: 55, purity: '≥99%', category: 'GH Research', description: 'Selective growth hormone secretagogue for research applications.', img: 'vial-ipa.jpg' },
-  { id: 'glutathione', name: 'Glutathione', size: 'Standard', price: 40, purity: '≥99%', category: 'Cellular', description: 'Endogenous antioxidant for cellular research.', img: 'vial-nad.jpg' },
-  { id: 'selank', name: 'Selank', size: 'Standard', price: 55, purity: '≥99%', category: 'Neurological', description: 'Synthetic peptide for neurological research.', img: 'vial-semax.jpg' },
+  { id: 'glutathione', name: 'Glutathione', size: 'Standard', price: 40, purity: '≥99%', category: 'Cellular', description: 'Endogenous antioxidant for cellular research.', img: 'Glutathione vial.jpg' },
+  { id: 'selank', name: 'Selank', size: 'Standard', price: 55, purity: '≥99%', category: 'Neurological', description: 'Synthetic peptide for neurological research.', img: 'Selank vial.jpg' },
   { id: 'semax', name: 'Semax', size: 'Standard', price: 55, purity: '≥99%', category: 'Neurological', description: 'Synthetic peptide analog for neurological research.', img: 'vial-semax.jpg' },
-  { id: 'kisspeptin-10', name: 'Kisspeptin', size: '10 mg', price: 73, purity: '≥99%', category: 'Specialty', description: 'Neuropeptide for reproductive axis research.', img: 'vial-pt.jpg' },
-  { id: 'bac-water', name: 'BAC Water', size: '3 ml', price: 9, purity: 'Research Grade', category: 'Accessories', description: 'Bacteriostatic water for peptide reconstitution research.', img: 'vial-nad.jpg' }
+  { id: 'kisspeptin-10', name: 'Kisspeptin', size: '10 mg', price: 73, purity: '≥99%', category: 'Specialty', description: 'Neuropeptide for reproductive axis research.', img: 'KISS vial.jpg' },
+  { id: 'bac-water', name: 'BAC Water', size: '3 ml', price: 9, purity: 'Research Grade', category: 'Accessories', description: 'Bacteriostatic water for peptide reconstitution research.', img: 'BAC 3ml vial.jpg' }
 ];
 
 let cart = JSON.parse(localStorage.getItem('ps_cart') || '[]');
