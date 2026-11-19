@@ -1,31 +1,24 @@
 // Precision Sequence - Main Script
 
 const PRODUCTS = [
-  { id: 'bpc157-5', name: 'BPC-157', size: '5mg', price: 52.00, purity: '≥99%', category: 'Tissue & Repair', description: 'Research peptide for studies involving tissue signaling and cellular repair pathways.', img: 'vial-bpc.jpg' },
-  { id: 'bpc157-10', name: 'BPC-157', size: '10mg', price: 92.00, purity: '≥99%', category: 'Tissue & Repair', description: 'Research peptide for studies involving tissue signaling and cellular repair pathways.', img: 'vial-bpc.jpg' },
-  { id: 'tb500-10', name: 'TB-500', size: '10mg', price: 124.00, purity: '≥99%', category: 'Tissue & Repair', description: 'Thymosin Beta-4 fragment studied in research models of cellular migration and repair.', img: 'vial-tb.jpg' },
-  { id: 'sermorelin-5', name: 'Sermorelin', size: '5mg', price: 43.00, purity: '≥99%', category: 'GH Research', description: 'Growth hormone-releasing hormone analog for endocrine research.', img: 'vial-serm.jpg' },
-  { id: 'sermorelin-10', name: 'Sermorelin', size: '10mg', price: 78.00, purity: '≥99%', category: 'GH Research', description: 'Growth hormone-releasing hormone analog for endocrine research.', img: 'vial-serm.jpg' },
-  { id: 'ipamorelin-5', name: 'Ipamorelin', size: '5mg', price: 46.00, purity: '≥99%', category: 'GH Research', description: 'Selective growth hormone secretagogue for research applications.', img: 'vial-ipa.jpg' },
-  { id: 'tesamorelin-5', name: 'Tesamorelin', size: '5mg', price: 73.00, purity: '≥99%', category: 'GH Research', description: 'GHRH analog for research into growth hormone pathways.', img: 'vial-tesa.jpg' },
-  { id: 'tesamorelin-10', name: 'Tesamorelin', size: '10mg', price: 92.00, purity: '≥99%', category: 'GH Research', description: 'GHRH analog for research into growth hormone pathways.', img: 'vial-tesa.jpg' },
-  { id: 'ghk-cu', name: 'GHK-Cu', size: '50mg', price: 68.00, purity: '≥99%', category: 'Copper Peptides', description: 'Copper peptide for research into skin and tissue pathways.', img: 'vial-ghk.jpg' },
-  { id: 'aod9604', name: 'AOD 9604', size: '5mg', price: 55.00, purity: '≥99%', category: 'Metabolic', description: 'Growth hormone fragment for metabolic research.', img: 'vial-aod.jpg' },
-  { id: 'mots-c', name: 'MOTS-c', size: '10mg', price: 85.00, purity: '≥99%', category: 'Metabolic', description: 'Mitochondrial-derived peptide for metabolic research.', img: 'vial-mots.jpg' },
-  { id: 'semax', name: 'Semax', size: '25mg', price: 62.00, purity: '≥99%', category: 'Neurological', description: 'Synthetic peptide analog for neurological research.', img: 'vial-semax.jpg' },
-  { id: 'pt141', name: 'PT-141', size: '10mg', price: 58.00, purity: '≥99%', category: 'Specialty', description: 'Melanocortin receptor agonist for research applications.', img: 'vial-pt.jpg' },
-  { id: 'cjc1295', name: 'CJC-1295', size: '5mg', price: 48.00, purity: '≥99%', category: 'GH Research', description: 'GHRH analog for growth hormone research.', img: 'vial-cjc.jpg' },
-  { id: 'ghrp2', name: 'GHRP-2', size: '5mg', price: 44.00, purity: '≥99%', category: 'GH Research', description: 'Growth hormone releasing peptide for research.', img: 'vial-ghrp2.jpg' },
-  { id: 'ghrp6', name: 'GHRP-6', size: '5mg', price: 42.00, purity: '≥99%', category: 'GH Research', description: 'Growth hormone releasing peptide for research.', img: 'vial-ghrp6.jpg' },
-  { id: 'selank', name: 'Selank', size: '10mg', price: 56.00, purity: '≥99%', category: 'Neurological', description: 'Synthetic peptide for neurological research.', img: 'vial-selank.jpg' },
-  { id: 'epithalon', name: 'Epithalon', size: '25mg', price: 72.00, purity: '≥99%', category: 'Anti-Aging', description: 'Synthetic peptide for longevity research.', img: 'vial-epithalon.jpg' },
-  { id: 'nad', name: 'NAD+', size: '100mg', price: 95.00, purity: '≥99%', category: 'Cellular', description: 'Nicotinamide adenine dinucleotide for cellular research.', img: 'vial-nad.jpg' },
-  { id: 'll37', name: 'LL-37', size: '5mg', price: 88.00, purity: '≥99%', category: 'Specialty', description: 'Antimicrobial peptide for research applications.', img: 'vial-ll37.jpg' },
-  { id: 'hexarelin', name: 'Hexarelin', size: '5mg', price: 49.00, purity: '≥99%', category: 'GH Research', description: 'Growth hormone releasing peptide for research.', img: 'vial-hexarelin.jpg' },
-  { id: 'dsip', name: 'DSIP', size: '5mg', price: 54.00, purity: '≥99%', category: 'Neurological', description: 'Delta sleep-inducing peptide for research.', img: 'vial-dsip.jpg' },
-  { id: 'melanotan1', name: 'Melanotan 1', size: '10mg', price: 61.00, purity: '≥99%', category: 'Specialty', description: 'Melanocortin peptide for research applications.', img: 'vial-melanotan.jpg' },
-  { id: 'frag176', name: 'Fragment 176-191', size: '5mg', price: 51.00, purity: '≥99%', category: 'Metabolic', description: 'Growth hormone fragment for metabolic research.', img: 'vial-frag.jpg' },
-  { id: 'igf1lr3', name: 'IGF-1 LR3', size: '1mg', price: 125.00, purity: '≥99%', category: 'Growth Factors', description: 'Long-acting IGF-1 analog for research.', img: 'vial-igf.jpg' }
+  { id: 'retatrutide-10', name: 'Retatrutide', size: '10 mg', price: 60.33, purity: '≥99%', category: 'Metabolic', description: 'Triple agonist (GLP-1 / GIP / glucagon) for metabolic research.', img: 'vial.jpg' },
+  { id: 'retatrutide-30', name: 'Retatrutide', size: '30 mg', price: 106.03, purity: '≥99%', category: 'Metabolic', description: 'Triple agonist (GLP-1 / GIP / glucagon) for metabolic research.', img: 'vial.jpg' },
+  { id: 'nad-1000', name: 'NAD+', size: '1000 mg', price: 74.59, purity: '≥99%', category: 'Cellular', description: 'Nicotinamide adenine dinucleotide for cellular research.', img: 'vial-nad.jpg' },
+  { id: 'klow-80', name: 'KLOW', size: '80 mg', price: 144.79, purity: '≥99%', category: 'Tissue & Repair', description: 'Multi-peptide research blend for tissue remodeling and recovery studies.', img: 'vial.jpg' },
+  { id: 'cjc-ipa', name: 'CJC-1295 (no DAC) + IPA', size: 'Blend', price: 76.78, purity: '≥99%', category: 'GH Research', description: 'GHRH analog + selective GH secretagogue combination for research.', img: 'vial-cjc.jpg' },
+  { id: 'ghk-cu-100', name: 'GHK-Cu', size: '100 mg', price: 23.40, purity: '≥99%', category: 'Copper Peptides', description: 'Copper peptide for research into skin and tissue pathways.', img: 'vial-ghk.jpg' },
+  { id: 'mots-c-40', name: 'MOTS-c', size: '40 mg', price: 45.34, purity: '≥99%', category: 'Metabolic', description: 'Mitochondrial-derived peptide for metabolic research.', img: 'vial-mots.jpg' },
+  { id: '5-amino-1mq', name: '5-Amino-1MQ', size: 'Standard', price: 32.91, purity: '≥99%', category: 'Metabolic', description: 'Small molecule for NNMT and metabolic pathway research.', img: 'vial.jpg' },
+  { id: 'tesamorelin', name: 'Tesamorelin', size: 'Standard', price: 108.23, purity: '≥99%', category: 'GH Research', description: 'GHRH analog for research into growth hormone pathways.', img: 'vial-tesa.jpg' },
+  { id: 'dsip', name: 'DSIP', size: 'Standard', price: 57.04, purity: '≥99%', category: 'Neurological', description: 'Delta sleep-inducing peptide for research.', img: 'vial-dsip.jpg' },
+  { id: 'wolverine-20', name: 'Wolverine', size: '20 mg', price: 71.66, purity: '≥99%', category: 'Tissue & Repair', description: 'BPC-157 + TB-500 research blend for tissue repair studies.', img: 'vial-bpc.jpg' },
+  { id: 'epithalon', name: 'Epithalon', size: 'Standard', price: 35.10, purity: '≥99%', category: 'Anti-Aging', description: 'Synthetic peptide for longevity research.', img: 'vial-epithalon.jpg' },
+  { id: 'ipamorelin', name: 'Ipamorelin', size: 'Standard', price: 49.73, purity: '≥99%', category: 'GH Research', description: 'Selective growth hormone secretagogue for research applications.', img: 'vial-ipa.jpg' },
+  { id: 'glutathione', name: 'Glutathione', size: 'Standard', price: 35.83, purity: '≥99%', category: 'Cellular', description: 'Endogenous antioxidant for cellular research.', img: 'vial.jpg' },
+  { id: 'selank', name: 'Selank', size: 'Standard', price: 49.73, purity: '≥99%', category: 'Neurological', description: 'Synthetic peptide for neurological research.', img: 'vial.jpg' },
+  { id: 'semax', name: 'Semax', size: 'Standard', price: 49.73, purity: '≥99%', category: 'Neurological', description: 'Synthetic peptide analog for neurological research.', img: 'vial-semax.jpg' },
+  { id: 'kisspeptin-10', name: 'Kisspeptin', size: '10 mg', price: 65.81, purity: '≥99%', category: 'Specialty', description: 'Neuropeptide for reproductive axis research.', img: 'vial.jpg' },
+  { id: 'bac-water', name: 'BAC Water', size: '3 ml', price: 7.31, purity: 'Research Grade', category: 'Accessories', description: 'Bacteriostatic water for peptide reconstitution research.', img: 'vial.jpg' }
 ];
 
 let cart = JSON.parse(localStorage.getItem('ps_cart') || '[]');
@@ -93,77 +86,8 @@ function renderProductPage() {
           <a href="shop.html" class="block mt-4 text-forest text-sm">← Back to Shop</a>
         </div>
       </div>
-
-      <div class="border-t border-gray-200 pt-8">
-        <div class="flex border-b border-gray-200 mb-6">
-          <button onclick="showTab('desc')" id="tab-desc" class="px-4 py-2 text-sm font-semibold border-b-2 border-forest text-forest">Description</button>
-          <button onclick="showTab('coa')" id="tab-coa" class="px-4 py-2 text-sm font-semibold text-gray-500 hover:text-forest">Certificate of Analysis</button>
-          <button onclick="showTab('storage')" id="tab-storage" class="px-4 py-2 text-sm font-semibold text-gray-500 hover:text-forest">Storage Instructions</button>
-        </div>
-
-        <div id="panel-desc" class="text-sm text-gray-600 space-y-4">
-          <h2 class="text-lg font-semibold text-gray-900">Description</h2>
-          <p>A single-component research material supplied for controlled research environments. Suitable for studies involving ${product.category.toLowerCase()} pathway characterization and method development in model systems.</p>
-          <h3 class="font-semibold text-gray-900">Composition</h3>
-          <ul class="list-disc list-inside">
-            <li>${product.name}</li>
-            <li>Appearance: Lyophilized powder in a sealed research vial</li>
-          </ul>
-          <h3 class="font-semibold text-gray-900">Research Focus (non-clinical)</h3>
-          <ul class="list-disc list-inside">
-            <li>Peptide identity and purity assessment via HPLC/LC-MS</li>
-            <li>Assay development and calibration for quantitative analysis</li>
-            <li>Chromatographic method optimization for impurity profiling</li>
-            <li>Stability characterization under laboratory storage conditions</li>
-          </ul>
-          <p>For qualified research professionals and institutional laboratories. Not for human use.</p>
-          <h3 class="font-semibold text-gray-900">Important Notice</h3>
-          <p>This product is intended for laboratory research use only. It is not intended for human or veterinary use, and must not be used for diagnostic, therapeutic, or clinical purposes. This material is not a drug, medical device, or dietary supplement, and has not been evaluated by the U.S. Food and Drug Administration.</p>
-        </div>
-
-        <div id="panel-coa" class="hidden text-sm text-gray-600 space-y-4">
-          <h2 class="text-lg font-semibold text-gray-900">Certificate of Analysis</h2>
-          <p>Every batch undergoes independent third-party laboratory analysis to verify identity, potency, and purity. Testing includes quantitative assay verification and comprehensive analysis.</p>
-          <ul class="list-disc list-inside">
-            <li>Third-Party Lab Verified</li>
-            <li>Quantitative Assay</li>
-            <li>HPLC Analysis</li>
-            <li>Mass Spectrometry</li>
-          </ul>
-          <p class="text-xs text-gray-500">Testing performed per USP compendial standards by independent analytical laboratory. Certificates of Analysis are available upon request for each batch.</p>
-          <p><strong>Purity:</strong> Verified ≥99%, confirmed by independent third-party testing.</p>
-        </div>
-
-        <div id="panel-storage" class="hidden text-sm text-gray-600 space-y-4">
-          <h2 class="text-lg font-semibold text-gray-900">Storage Instructions</h2>
-          <p>All products from Precision Sequence are manufactured using a lyophilization (freeze-drying) process. This method maintains product integrity and allows vials to remain stable during shipping for approximately 3–4 months.</p>
-          <h3 class="font-semibold text-gray-900">Lyophilized Peptides</h3>
-          <ul class="list-disc list-inside">
-            <li>Store at -20°C for long-term storage (up to 24 months)</li>
-            <li>Store at 2–8°C (refrigerated) for short-term storage (up to 3 months)</li>
-            <li>Keep away from light, moisture, and repeated temperature fluctuations</li>
-          </ul>
-          <h3 class="font-semibold text-gray-900">After Reconstitution</h3>
-          <p>Once a vial is reconstituted with bacteriostatic water, it should be stored in the refrigerator. Under these conditions, reconstituted material is generally considered stable for up to 30 days.</p>
-          <p class="text-xs text-gray-500"><strong>Important Notice:</strong> These products are intended for research use only. Not for human consumption.</p>
-        </div>
-      </div>
     </div>
   `;
-}
-
-function showTab(tab) {
-  ['desc', 'coa', 'storage'].forEach(t => {
-    document.getElementById('panel-' + t).classList.toggle('hidden', t !== tab);
-    const btn = document.getElementById('tab-' + t);
-    if (t === tab) {
-      btn.classList.add('border-b-2', 'border-forest', 'text-forest');
-      btn.classList.remove('text-gray-500');
-    } else {
-      btn.classList.remove('border-b-2', 'border-forest', 'text-forest');
-      btn.classList.add('text-gray-500');
-    }
-  });
 }
 
 function addToCart(productId) {
@@ -173,12 +97,6 @@ function addToCart(productId) {
   if (existing) { existing.qty += 1; } else { cart.push({ ...product, qty: 1 }); }
   localStorage.setItem('ps_cart', JSON.stringify(cart));
   updateCartUI();
-  if (event && event.target) {
-    const btn = event.target;
-    const original = btn.textContent;
-    btn.textContent = 'Added';
-    setTimeout(() => btn.textContent = original, 1000);
-  }
 }
 
 function updateCartUI() {
